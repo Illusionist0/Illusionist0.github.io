@@ -25,7 +25,7 @@
 <meta property="og:description" content="Hexo官网：https:&#x2F;&#x2F;hexo.io&#x2F; Hexo Github: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo Hexo Awesome: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;awesome-hexo 1.初始化需要node环境，我的node版本是18.20.2 使用npm安装 1npm install  npm换源加快安装(采用腾讯云源，也可以采用淘宝源)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-26T18:08:29.000Z">
-<meta property="article:modified_time" content="2024-11-27T16:20:30.774Z">
+<meta property="article:modified_time" content="2024-11-27T17:40:44.585Z">
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
   
@@ -142,7 +142,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~6.18K
+                            ~6.25K
                         
                         字
                     </li>
@@ -154,7 +154,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1732724430774"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1732729244585"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -427,7 +427,7 @@
 <p>示例：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://blog.shiguangdev.eu.org</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:hash/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="历史部署错误"><a href="#历史部署错误" class="headerlink" title="历史部署错误"></a>历史部署错误</h3><h5 id="2024"><a href="#2024" class="headerlink" title="2024"></a>2024</h5><h6 id="Spawn-Failed-400"><a href="#Spawn-Failed-400" class="headerlink" title="Spawn Failed 400"></a>Spawn Failed 400</h6><p>错误类型:</p>
+<h3 id="历史部署错误"><a href="#历史部署错误" class="headerlink" title="历史部署错误"></a>历史部署错误</h3><h5 id="Spawn-Failed-400"><a href="#Spawn-Failed-400" class="headerlink" title="Spawn Failed 400"></a>Spawn Failed 400</h5><p>错误类型:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">致命错误：远端意外挂断了</span><br><span class="line">Everything up-to-date</span><br><span class="line">FATAL Something<span class="string">&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (/Users/mac/zn_blog/blog/node_modules/hexo-deployer-git/node_modules/hexo-util/lib/spawn.js:51:21)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (node:events:517:28)</span></span><br><span class="line"><span class="string">    at ChildProcess._handle.onexit (node:internal/child_process:292:12)</span></span><br></pre></td></tr></table></figure>
 
 <p>解决方案（一）</p>
@@ -441,10 +441,10 @@
 </ol>
 <p>解决方案（二）</p>
 <ol>
-<li>_config.yml中把repo从公网换成ssh地址：<a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:Illusionist0&#x2F;Illusionist0.github.io.git</li>
+<li>_config.yml中把repo从公网换成ssh地址：<a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;</a>:Illusionist0&#x2F;Illusionist0.github.io.git</li>
 <li>亲测已解决</li>
 </ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><em><a target="_blank" rel="noopener" href="https://bore.vip/archives/d6da8e6c/">hexo 版本升级</a></em></p>
+<h5 id="Spawn-Failed-GH103-Repository-rule-violations-found-for-refs-heads-maste"><a href="#Spawn-Failed-GH103-Repository-rule-violations-found-for-refs-heads-maste" class="headerlink" title="Spawn Failed GH103 Repository rule violations found for refs&#x2F;heads&#x2F;maste"></a>Spawn Failed GH103 Repository rule violations found for refs&#x2F;heads&#x2F;maste</h5><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><em><a target="_blank" rel="noopener" href="https://bore.vip/archives/d6da8e6c/">hexo 版本升级</a></em></p>
 <p><em><a target="_blank" rel="noopener" href="https://butterfly.js.org/">butterfly</a></em></p>
 <p><em><a target="_blank" rel="noopener" href="https://blog.csdn.net/csdnxia/article/details/120820081">使用Hexo免费搭建个人博客教程</a></em></p>
 <p><em><a target="_blank" rel="noopener" href="https://codemilk.cn/archives/30/">hexo域名解析的两种方法</a></em></p>
@@ -540,7 +540,7 @@ Hexo Awesome: https://github.com/hexojs/awesome-h...`;
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-11-27T16:20:30.774Z" itemprop="dateModified">最后编辑：2024-11-28</time>
+                    <time datetime="2024-11-27T17:40:44.585Z" itemprop="dateModified">最后编辑：2024-11-28</time>
                 </div>
             </div>
         </footer>
