@@ -24,10 +24,13 @@
 <meta property="og:site_name" content="zennon&#39;s blog">
 <meta property="og:description" content="SSL介绍SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。 SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。 SSL证书通过在客户端浏览器和Web服务器之间建立一条SSL安全通道（Secure socket layerSSL）安全协议是由Netscape">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://alist.zennon.top/d/image/image-20241129013806573.png?sign=SpIz0BalT7mHrmHHVOO2DTx6VOhPEd6YssC61y0JjIY=:0">
+<meta property="og:image" content="https://alist.zennon.top/d/image/image-20241129013839019.png?sign=JKEAjgwuHCmTk3p3eZcWWEVyZgACLkcl_8N1oaANwoQ=:0">
 <meta property="article:published_time" content="2024-11-28T12:18:09.000Z">
-<meta property="article:modified_time" content="2024-11-28T15:50:19.578Z">
+<meta property="article:modified_time" content="2024-11-28T17:40:55.720Z">
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://alist.zennon.top/d/image/image-20241129013806573.png?sign=SpIz0BalT7mHrmHHVOO2DTx6VOhPEd6YssC61y0JjIY=:0">
   
   <!-- 站点验证相关 -->
   
@@ -142,7 +145,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            1485
+                            ~1.60K
                         
                         字
                     </li>
@@ -154,7 +157,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1732809019578"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1732815655720"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -179,7 +182,12 @@
 
 
 
-<h6 id="2-Cloudflare-科赋锐"><a href="#2-Cloudflare-科赋锐" class="headerlink" title="2.Cloudflare 科赋锐"></a>2.Cloudflare 科赋锐</h6></div>
+<h6 id="2-Cloudflare-科赋锐"><a href="#2-Cloudflare-科赋锐" class="headerlink" title="2.Cloudflare 科赋锐"></a>2.Cloudflare 科赋锐</h6><p>首先，设置加密为安全（严格）</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241129013806573.png?sign=SpIz0BalT7mHrmHHVOO2DTx6VOhPEd6YssC61y0JjIY=:0" alt="image-20241129013806573"></p>
+<p>然后，创建证书，证书级别为E1，比LetsEncrypt的R3有效期要更长</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241129013839019.png?sign=JKEAjgwuHCmTk3p3eZcWWEVyZgACLkcl_8N1oaANwoQ=:0" alt="image-20241129013839019"></p>
+<h6 id="3-Nginx部署"><a href="#3-Nginx部署" class="headerlink" title="3.Nginx部署"></a>3.Nginx部署</h6><p>设置反向代理，并在&#x2F;etc&#x2F;nginx&#x2F;cert下添加pem和key文件</p>
+</div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -269,7 +277,7 @@ SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，�
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-11-28T15:50:19.578Z" itemprop="dateModified">最后编辑：2024-11-28</time>
+                    <time datetime="2024-11-28T17:40:55.720Z" itemprop="dateModified">最后编辑：2024-11-29</time>
                 </div>
             </div>
         </footer>
