@@ -17,12 +17,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。                      &lt;script&gt; var ap &#x3D; new APlayer (&#123;     element: document.getElementB">
+  <meta name="description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。                  var ap &#x3D; new APlayer ({     element: document.getElementById(&#39;aplayer&#39;),     show">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【hexo】图床的搭建和使用">
 <meta property="og:url" content="https://illusionist0.github.io/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="zennon&#39;s blog">
-<meta property="og:description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。                      &lt;script&gt; var ap &#x3D; new APlayer (&#123;     element: document.getElementB">
+<meta property="og:description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。                  var ap &#x3D; new APlayer ({     element: document.getElementById(&#39;aplayer&#39;),     show">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127132413467-20241129013315341.png?sign=mmAsEQl3N-jndlenXTNDxSRRkZdHVYTwC4cr4oPY7YQ=:0">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127184403919-20241129013326613.png?sign=-wHoebD-uTgxvPyXAN0pGUCBForhAlBIZUsOE8cMBaU=:0">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127185831897-20241129013330703.png?sign=JUNonpJEF5T-wpuJhZCoVOyeYuzH5zcARrbnCKisDc8=:0">
 <meta property="article:published_time" content="2024-11-27T05:18:24.000Z">
-<meta property="article:modified_time" content="2024-12-05T02:11:35.947Z">
+<meta property="article:modified_time" content="2024-12-05T02:16:16.631Z">
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0">
@@ -148,7 +148,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~4.21K
+                            ~4.13K
                         
                         字
                     </li>
@@ -160,7 +160,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1733364695947"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1733364976631"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -177,30 +177,31 @@
 </audio>
 
 
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
 <div id='aplayer'></div>
 
-<pre><code>    &lt;script&gt;
+<script>
 var ap = new APlayer
-(&#123;
-    element: document.getElementById(&#39;aplayer&#39;),
+({
+    element: document.getElementById('aplayer'),
     showlrc: false,
     fixed: true,
     mini: true,
-    audio: &#123;
-        title: &#39;assembly&#39;,
-        author: &#39;K&#39;,
-        url: &#39;https://alist.zennon.top/d/music/%E9%81%A0%E8%97%A4%E5%B9%B9%E9%9B%84%20-%20Assembly.mp3?sign=aCAbBtMkzwtQxz0u_JA3hM3rPrsI8TVIDYkBQwMgb60=:0&#39;,
-        pic: &#39;https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0&#39;
-    &#125;
-&#125;);
+    audio: {
+        title: 'assembly',
+        author: 'K',
+        url: 'https://alist.zennon.top/d/music/%E9%81%A0%E8%97%A4%E5%B9%B9%E9%9B%84%20-%20Assembly.mp3?sign=aCAbBtMkzwtQxz0u_JA3hM3rPrsI8TVIDYkBQwMgb60=:0',
+        pic: 'https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0'
+    }
+});
 ap.init();
-</code></pre>
-<p></script></p>
+</script>
+
+
+
 <h5 id="Github-PicGo"><a href="#Github-PicGo" class="headerlink" title="Github+PicGo"></a>Github+PicGo</h5><h6 id="创建GitHub-repo"><a href="#创建GitHub-repo" class="headerlink" title="创建GitHub repo"></a>创建GitHub repo</h6><p>new一个project，命名为image_bed</p>
 <p>Settings-Developer settings-Personal Access Tokens-Tokens-Generate New Token(classic)</p>
 <p>Note:picgo</p>
@@ -360,7 +361,7 @@ ap.init();
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-12-05T02:11:35.947Z" itemprop="dateModified">最后编辑：2024-12-05</time>
+                    <time datetime="2024-12-05T02:16:16.631Z" itemprop="dateModified">最后编辑：2024-12-05</time>
                 </div>
             </div>
         </footer>
