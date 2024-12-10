@@ -17,12 +17,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。   元胞自动机是用一系列模型构造的规则构成，只要满足规则就可以算作是元胞自动机模型。它是一类模型的总称、一种思想、一种方法框架。    CA模型的特点：①每一个元胞都取有限的离散状态；②必须遵循同样的作用规则；">
+  <meta name="description" content="元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。   元胞自动机是用一系列模型构造的规则构成，只要满足规则就可以算作是元胞自动机模型。它是一类模型的总称、一种思想、一种方法框架。    CA模型的特点：①每一个元胞都取有限的离散状态；②必须遵循同样的作用规则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【设计随笔】生命游戏">
 <meta property="og:url" content="https://illusionist0.github.io/2024/05/18/%E3%80%90%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94%E3%80%91%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/index.html">
 <meta property="og:site_name" content="zennon&#39;s blog">
-<meta property="og:description" content="元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。   元胞自动机是用一系列模型构造的规则构成，只要满足规则就可以算作是元胞自动机模型。它是一类模型的总称、一种思想、一种方法框架。    CA模型的特点：①每一个元胞都取有限的离散状态；②必须遵循同样的作用规则；">
+<meta property="og:description" content="元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。   元胞自动机是用一系列模型构造的规则构成，只要满足规则就可以算作是元胞自动机模型。它是一类模型的总称、一种思想、一种方法框架。    CA模型的特点：①每一个元胞都取有限的离散状态；②必须遵循同样的作用规则">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-18T08:40:42.000Z">
 <meta property="article:modified_time" content="2024-05-18T09:00:16.006Z">
@@ -66,6 +66,12 @@
       }
     
     
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
   </style>
   
 <meta name="generator" content="Hexo 7.2.0"></head>
@@ -82,6 +88,10 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
+                                    
+                                        
+                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                        
                                     
                                 
                             </ul>
@@ -116,6 +126,146 @@
             <div class="container">
                 <div id="main" class="row">
                     
+                        
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                1
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/%E5%A4%96%E8%AF%AD%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%97%A5%E8%AF%AD/" style="font-size: 0.6em;">外语学习，日语</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa  fa-book"></i> test</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa  fa-book"></i> 【Web3】Trading View</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa  fa-book"></i> 【每日随笔】大雪</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+                    
 
         
 
@@ -142,7 +292,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            786
+                            787
                         
                         字
                     </li>
@@ -160,7 +310,7 @@
             
             
             <hr />
-            <div itemprop="articleBody"><h3 id="元胞自动机概念"><a href="#元胞自动机概念" class="headerlink" title="元胞自动机概念"></a>元胞自动机概念</h3><p> 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。</p>
+            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h3 id="元胞自动机概念"><a href="#元胞自动机概念" class="headerlink" title="元胞自动机概念"></a>元胞自动机概念</h3><p> 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。</p>
 <p>  元胞自动机是用一系列模型构造的<strong>规则</strong>构成，只要满足规则就可以算作是元胞自动机模型。它是一类模型的总称、一种思想、一种方法框架。 </p>
 <p>  CA模型的特点：①每一个元胞都取有限的离散状态；②必须遵循同样的作用规则；③依据确定的局部规则进行同步更新；④其状态改变的规则在时间和空间上都是局部的。</p>
 <h3 id="元胞自动机构成"><a href="#元胞自动机构成" class="headerlink" title="元胞自动机构成"></a>元胞自动机构成</h3><p>元胞自动机最基本的组成：元胞、元胞空间、元胞邻居和元胞规则（由一个元胞空间和定义其空间的函数构成）</p>
@@ -240,8 +390,8 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://illusionist0.github.io/2024/05/18/%E3%80%90%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94%E3%80%91%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/";
             const title         = "「【设计随笔】生命游戏」";
-            const excerpt       = `元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。
-  元胞自动机是用一系列模型构造的规则构成，...`;
+            const excerpt       = ` 元胞自动机概念 元胞自动机(cellular automata，CA) 是一种时间、空间、状态都离散，空间相互作用和时间因果关系为局部的网格动力学模型，具有模拟复杂系统时空演化过程的能力。
+  元胞自动机是用一系列模型构造的规则构成...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -292,140 +442,6 @@
         
 
                 
-            
-
-<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
-    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-    
-                <aside id="krw-about" class="widget widget-kratos-about clearfix">
-    <div class="photo-background"></div>
-    <div class="photo-wrapper clearfix">
-        <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
-        </div>
-    </div>
-    <div class="textwidget">
-        <p class="text-center"></p>
-    </div>
-    <div class="site-meta">
-        <a class="meta-item" href="/archives/">
-            <span class="title">
-                文章
-            </span>
-            <span class="count">
-                18
-            </span>
-        </a>
-        <a class="meta-item" href="/categories/">
-            <span class="title">
-                分类
-            </span>
-            <span class="count">
-                7
-            </span>
-        </a>
-        <a class="meta-item" href="/tags/">
-            <span class="title">
-                标签
-            </span>
-            <span class="count">
-                1
-            </span>
-        </a>
-    </div>
-</aside>
-            
-                    <div class="sticky-area">
-                
-                
-  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
-    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
-  </aside>
-
-
-            
-                
-  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
-    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
-      <div class="tag-clouds">
-        <a href="/tags/%E5%A4%96%E8%AF%AD%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%97%A5%E8%AF%AD/" style="font-size: 0.6em;">外语学习，日语</a>
-      </div>
-  </aside>
-
-            
-                
-  <aside id="krw-posts" class="widget widget-kratos-posts">
-  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
-  <div class="tab-content">
-      <ul class="list-group">
-        
-        
-          
-          
-            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90Supabase%E3%80%91%E5%BC%80%E6%BA%90%E7%9A%84Postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/"><i class="fa  fa-book"></i> 【Supabase】开源的Postgresql数据库管理</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/"><i class="fa  fa-book"></i> 【hexo】图床的搭建和使用</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"><i class="fa  fa-book"></i> 【hexo】hexo部署博客教程</a>
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-      </ul>
-  </div>
-  </aside>
-
-            
-    </div>
-</section>
-        
         </div>
     </div>
 </div>

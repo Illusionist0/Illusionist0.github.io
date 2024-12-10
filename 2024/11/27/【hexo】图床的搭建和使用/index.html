@@ -17,12 +17,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。  var aplayer0 &#x3D; new APlayer({element: document.getElementById(&quot;aplayer0&quot;),narrow: false,autoplay:">
+  <meta name="description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。  🔗**如何加入Aplayer music** var aplayer0 &#x3D; new APlayer({element: document.getElementById(&quot;aplayer0&quot;),">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【hexo】图床的搭建和使用">
 <meta property="og:url" content="https://illusionist0.github.io/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="zennon&#39;s blog">
-<meta property="og:description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。  var aplayer0 &#x3D; new APlayer({element: document.getElementById(&quot;aplayer0&quot;),narrow: false,autoplay:">
+<meta property="og:description" content="“图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。  注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。  🔗**如何加入Aplayer music** var aplayer0 &#x3D; new APlayer({element: document.getElementById(&quot;aplayer0&quot;),">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127132413467-20241129013315341.png?sign=mmAsEQl3N-jndlenXTNDxSRRkZdHVYTwC4cr4oPY7YQ=:0">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127184403919-20241129013326613.png?sign=-wHoebD-uTgxvPyXAN0pGUCBForhAlBIZUsOE8cMBaU=:0">
 <meta property="og:image" content="https://alist.zennon.top/d/image/image-20241127185831897-20241129013330703.png?sign=JUNonpJEF5T-wpuJhZCoVOyeYuzH5zcARrbnCKisDc8=:0">
 <meta property="article:published_time" content="2024-11-27T05:18:24.000Z">
-<meta property="article:modified_time" content="2024-12-05T02:47:12.377Z">
+<meta property="article:modified_time" content="2024-12-06T06:40:34.668Z">
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://alist.zennon.top/d/image/image-20241128083513713-20241129011622099-20241129013345624.png?sign=gFrHXdYRhqTj7-R96DMfQ3vDG-5Is4oC336cP7rO9TI=:0">
@@ -72,6 +72,12 @@
       }
     
     
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
   </style>
   
 <meta name="generator" content="Hexo 7.2.0"></head>
@@ -88,6 +94,10 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
+                                    
+                                        
+                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                        
                                     
                                 
                             </ul>
@@ -122,6 +132,146 @@
             <div class="container">
                 <div id="main" class="row">
                     
+                        
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                1
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/%E5%A4%96%E8%AF%AD%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%97%A5%E8%AF%AD/" style="font-size: 0.6em;">外语学习，日语</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa  fa-book"></i> test</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa  fa-book"></i> 【Web3】Trading View</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa  fa-book"></i> 【每日随笔】大雪</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+                    
 
         
 
@@ -148,7 +298,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~4.02K
+                            ~4.04K
                         
                         字
                     </li>
@@ -160,7 +310,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1733366832377"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1733467234668"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -170,6 +320,7 @@
 
 <p>注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。</p>
 
+<p>🔗**<a target="_blank" rel="noopener" href="https://yuanlichenai.cn/2019/03/03/music/">如何加入Aplayer music</a>**</p>
 <div id="aplayer0" class="aplayer" style="margin-bottom: 20px;width:80%;"></div><script>var aplayer0 = new APlayer({element: document.getElementById("aplayer0"),narrow: false,autoplay: false,showlrc: 0,music : {title: "assembly",author: "遠藤幹雄",url: "https://alist.zennon.top/d/music/%E9%81%A0%E8%97%A4%E5%B9%B9%E9%9B%84%20-%20Assembly.mp3?sign=aCAbBtMkzwtQxz0u_JA3hM3rPrsI8TVIDYkBQwMgb60=:0",pic: "https://alist.zennon.top/d/image/assembly_cover.png?sign=6E8Y2dwcjGz_4ejh8lOhvqfFhhBnP0ISGyR_KI95j1M=:0"}});aplayer0.init();</script>
 
 
@@ -299,7 +450,7 @@
 
 注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。
 
-var aplayer0 =...`;
+🔗**如何加入Aplaye...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -321,7 +472,7 @@ var aplayer0 =...`;
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-12-05T02:47:12.377Z" itemprop="dateModified">最后编辑：2024-12-05</time>
+                    <time datetime="2024-12-06T06:40:34.668Z" itemprop="dateModified">最后编辑：2024-12-06</time>
                 </div>
             </div>
         </footer>
@@ -350,140 +501,6 @@ var aplayer0 =...`;
         
 
                 
-            
-
-<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
-    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-    
-                <aside id="krw-about" class="widget widget-kratos-about clearfix">
-    <div class="photo-background"></div>
-    <div class="photo-wrapper clearfix">
-        <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
-        </div>
-    </div>
-    <div class="textwidget">
-        <p class="text-center"></p>
-    </div>
-    <div class="site-meta">
-        <a class="meta-item" href="/archives/">
-            <span class="title">
-                文章
-            </span>
-            <span class="count">
-                18
-            </span>
-        </a>
-        <a class="meta-item" href="/categories/">
-            <span class="title">
-                分类
-            </span>
-            <span class="count">
-                7
-            </span>
-        </a>
-        <a class="meta-item" href="/tags/">
-            <span class="title">
-                标签
-            </span>
-            <span class="count">
-                1
-            </span>
-        </a>
-    </div>
-</aside>
-            
-                    <div class="sticky-area">
-                
-                
-  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
-    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
-  </aside>
-
-
-            
-                
-  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
-    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
-      <div class="tag-clouds">
-        <a href="/tags/%E5%A4%96%E8%AF%AD%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%97%A5%E8%AF%AD/" style="font-size: 0.6em;">外语学习，日语</a>
-      </div>
-  </aside>
-
-            
-                
-  <aside id="krw-posts" class="widget widget-kratos-posts">
-  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
-  <div class="tab-content">
-      <ul class="list-group">
-        
-        
-          
-          
-            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90Supabase%E3%80%91%E5%BC%80%E6%BA%90%E7%9A%84Postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/"><i class="fa  fa-book"></i> 【Supabase】开源的Postgresql数据库管理</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/"><i class="fa  fa-book"></i> 【hexo】图床的搭建和使用</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"><i class="fa  fa-book"></i> 【hexo】hexo部署博客教程</a>
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-      </ul>
-  </div>
-  </aside>
-
-            
-    </div>
-</section>
-        
         </div>
     </div>
 </div>
