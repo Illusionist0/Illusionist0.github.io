@@ -4,9 +4,11 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   
+    <link rel="icon" href="/assets/logo.jpg">
+  
   
   <title>分类: hexo | zennon&#39;s blog</title>
-  
+  <link rel="canonical" href="https://illusionist0.github.io/categories/hexo/index.html">
   <meta name="author" content="Zennon" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -25,53 +27,64 @@
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
   
-  <!-- 站点验证相关 -->
-  
-    
-    
-    
-  
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
-    <script src="/js/kr-dark.min.js"></script>
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
   
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
-  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
-  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
-  
-  
-    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
   
   
-    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
   
-  
+  <!-- 自定义站点横幅和背景 -->
   <style>
     
       .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
+        background-image: url('https://dev.krt.moe/demo-assets/banner.webp');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner_dark.webp');
       }
     
     
       @media(min-width:768px) {
         body.custom-background {
-          background-image: url('/images/bg.webp');
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
         }
       }
     
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
   </style>
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
 
+  <!-- 额外的追加注入项 -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<link rel="stylesheet" href="/comments/waline.css" />
+<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+<link rel="stylesheet" href="/widgets/aplayer.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
     <body class="custom-background">
         <div id="kratos-wrapper">
@@ -83,12 +96,63 @@
                         <nav id="kratos-menu-wrap">
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
-                                    
-                                    
+                                    <li>
                                         
-                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                            <a href="/">
                                         
-                                    
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a>
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            链接
+                                        </a>
+                                        
+                                            <ul class="sub-menu">
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                            
+                                                                <i class="fa fa-code"></i>
+                                                            
+                                                            代码仓库
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://wiki.krt.moe">
+                                                            
+                                                                <i class="fa fa-book"></i>
+                                                            
+                                                            项目文档
+                                                        </a>
+                                                    </li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
                                 
                             </ul>
                         </nav>
@@ -98,8 +162,8 @@
             <header id="kratos-mobile-topnav" class="kratos-topnav">
                 <div class="container">
                     <div class="color-logo"><a href="/">zennon&#39;s blog</a></div>
-                    <div class="nav-toggle">
-                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
                             <i></i>
                         </a>
                     </div>
@@ -121,8 +185,240 @@
         <div id="kratos-blog-post">
             <div class="container">
                 <div id="main" class="row">
-                    
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <!-- Breadcrumb for tag & category page -->
+
+    <article class="kratos-hentry kratos-entry-border clearfix">
+    <div class="kratos-breadcrumb">
+        <a href="/">
+            <i class="fa fa-home"></i>
+        </a>
+        <i class="fa fa-angle-right"></i>
+        
+
+            <a href="/categories/">
+                分类
+            </a>
+
+            
+            
+                <i class="fa fa-angle-right"></i>
+                <a href="/categories/hexo/">
+                    hexo
+                </a>
+            
+        
+        
+    </div>
+</article>
+
+
+
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/hexo/">hexo</a>
+                    <h2 class="kratos-entry-title"><a href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】免费SSL证书的申请</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
                         
+                             SSL介绍SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。
+SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-28T12:18:09.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-28</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                    <a>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" class="waline-pageview-count"> </span> 次阅读
+                    </a>
+                
+                
+                    <a>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" class="waline-comment-count"> </span> 条评论
+                    </a>
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/hexo/">hexo</a>
+                    <h2 class="kratos-entry-title"><a href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】图床的搭建和使用</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                             “图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。
+
+注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。
+
+🔗**如何加入Aplaye...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-27T05:18:24.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-27</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                    <a>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" class="waline-pageview-count"> </span> 次阅读
+                    </a>
+                
+                
+                    <a>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" class="waline-comment-count"> </span> 条评论
+                    </a>
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/hexo/">hexo</a>
+                    <h2 class="kratos-entry-title"><a href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】hexo部署博客教程</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                             Hexo官网：https:&#x2F;&#x2F;hexo.io&#x2F;
+Hexo Github: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo
+Hexo Awesome: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;awesome-...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-26T18:08:29.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-27</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                    <a>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="waline-pageview-count"> </span> 次阅读
+                    </a>
+                
+                
+                    <a>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="waline-comment-count"> </span> 条评论
+                    </a>
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+
+
+
+
+
+    <div class="comment-index">
+        
+    </div>
+
+
+
+        
+
+            </section>
+
+            
+                
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
@@ -134,7 +430,7 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+            <img class="about-photo" src="/assets/avatar.jpg" alt="Zennon" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
@@ -170,7 +466,7 @@
             
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
-    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类列表</h4>
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
   </aside>
 
@@ -194,31 +490,31 @@
         
           
           
-            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa  fa-book"></i> test</a>
+            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa fa-book"></i> test</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa  fa-book"></i> 【Web3】Trading View</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa fa-book"></i> 【Web3】Trading View</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa  fa-book"></i> 【每日随笔】大雪</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa fa-book"></i> 【每日随笔】大雪</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa fa-book"></i> 【hexo】免费SSL证书的申请</a>
             
           
         
@@ -261,257 +557,59 @@
             
     </div>
 </section>
-                    
-
-        
-
-            <section class="col-md-8">
-
-        
-
-            <!-- Breadcrumb for tag & category page -->
-
-    <article class="kratos-hentry kratos-entry-border-new clearfix">
-        <div class="kratos-breadcrumb">
-            <a href="/">
-                <i class="fa fa-home"></i>
-            </a>
-            <i class="fa fa-angle-right"></i>
             
 
-                <a href="/categories/">
-                    分类
-                </a>
-
-                
-                
-                    <i class="fa fa-angle-right"></i>
-                    <a href="/categories/hexo/">
-                        hexo
-                    </a>
-                
-            
-            
-        </div>
-    </article>
-
-
-
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/">
-                        
-                            <img class="kratos-entry-thumb-new-img" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/hexo/">hexo</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】免费SSL证书的申请</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                 SSL介绍SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。
-SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2024-11-28T12:18:09.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2024-11-28</a>
-                        </time>
-                        <a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/">
-                        
-                            <img class="kratos-entry-thumb-new-img" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/hexo/">hexo</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】图床的搭建和使用</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                 “图床”是用于存放图片的空间，基于图床可以快捷地实现图片分享，便于日常使用和前端开发。
-
-注意：一个良好的图床服务应当与 CDN 搭配以实现更快的加载速度，本文搭建的图床仅作为个人使用的图片托管平台。
-
-🔗**如何加入Aplaye...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2024-11-27T05:18:24.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2024-11-27</a>
-                        </time>
-                        <a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2024/11/27/%E3%80%90hexo%E3%80%91%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
-                        
-                            <img class="kratos-entry-thumb-new-img" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/hexo/">hexo</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" itemprop="mainEntityOfPage"><span itemprop="name headline">【hexo】hexo部署博客教程</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                 Hexo官网：https://hexo.io/
-Hexo Github: https://github.com/hexojs/hexo
-Hexo Awesome: https://github.com/hexojs/awesome-...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2024-11-26T18:08:29.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2024-11-27</a>
-                        </time>
-                        <a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2024/11/27/%E3%80%90hexo%E3%80%91hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-
-
-
-
-    <div class="hidden">
-        <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
-        
-    </div>
-
-
-
         
 
-            </section>
-
-        
-
-                
-        </div>
+                </div>
     </div>
 </div>
+
 <footer>
-    <div id="footer"  class="ap-lrc"  >
+    <div id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
-                        <!-- Keep for compatibility -->
                         
+                            <li>
+                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
                         
-                        
-                        
-                        
-                        
-                        
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Illusionist0"><i class="fa fa-github"></i></a></li>
-                        
-                        <!-- New links -->
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
                             <li>&copy; 2024 zennon's blog 版权所有.</li>
-                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                            <li>本站已在风雨中飘摇<span id="kr-since">Loading...</span></li>
                         </div>
                         <div>
-                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
-                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Zennon.</li>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">Zennon</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
                         </div>
-                        <div>
-                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
-                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
-                        </div>
-                        <div>
-                            
-                            
-                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                                    <li>您是本站的第 <span data-path="/index.html" class="waline-pageview-count"></span> 位访客</li>
+                                
+                                    <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">工信部备案号</a></li>
+                                
+                                    <li><a href="http://www.beian.gov.cn" rel="external nofollow" target="_blank"><img src="https://www.unpkg.com/hexo-theme-kratos-rebirth@2.2.0/source/images/psr.webp" width="12" height="12" loading="lazy" decoding="auto" />公安备案号</a></li>
+                                
+                            </div>
+                        
                     </ul>
                 </div>
             </div>
@@ -520,20 +618,16 @@ Hexo Awesome: https://github.com/hexojs/awesome-...
             <div class="tool">
                 
                     <div class="box search-box">
-                        <a href="/search/">
+                        <a href="/search">
                             <span class="fa fa-search"></span>
                         </a>
                     </div>
                 
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
             </div>
-            <div class="box gotop-box">
+            <div id="gotop-box" class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
             </div>
         </div>
@@ -542,9 +636,80 @@ Hexo Awesome: https://github.com/hexojs/awesome-...
 </div>
 </div>
 
-        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
-<script>
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">赞助喵</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">非常感谢您的喜欢！ <i class="fa fa-heart" style="color:#d43f57"></i></div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+                    <img class="kr-donate-placeholder" src="https://dev.krt.moe/demo-assets/donate.webp" alt="赞助喵" />
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
+                    
+                        <button class="kr-donate-platform-button" style="color: skyblue;" title="模拟支付" onclick="krDonateModalShowPlatformQR('example_payment', 'skyblue')">
+                            <i class="fa fa-credit-card"></i>
+                        </button>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享这一刻</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">让朋友们也来瞅瞅！</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+                    <button class="kr-share-platform-button" style="color: #62b6e7;" title="喵窝" onclick="krShareModalOpenPlatform('https://nya.one/share?text=%3E%20$TITLE%0A%3E%0A%3E%20$SUMMARY%0A----%20$SITE%0A%0A$URL')">
+                        <svg fill="currentColor" width="18" height="18" viewBox="0 0 329 388"><path d="M0,36.226c0,-19.993 16.233,-36.226 36.226,-36.226c13.788,0 25.787,7.719 31.908,19.068l188.366,229.845l0,-111.259c-6.356,5.508 -14.645,8.843 -23.707,8.843c-19.994,0 -36.226,-16.232 -36.226,-36.226c-0,-8.551 2.968,-16.413 7.93,-22.613l-0.015,-0.013l56.614,-69.08c6.2,-11.073 18.047,-18.565 31.63,-18.565c19.994,0 36.227,16.233 36.227,36.226l-0,314.644c-0,19.994 -16.233,36.226 -36.227,36.226c-13.166,0 -24.701,-7.039 -31.044,-17.555l-189.229,-230.899l-0,212.228c-0,19.994 -16.233,36.226 -36.227,36.226c-19.993,0 -36.226,-16.232 -36.226,-36.226l0,-314.644Z" /></svg>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+    <div id="aplayer"></div>
+<meting-js server="netease" type="playlist" id="60198" fixed="true"></meting-js>
+
+
+
+        <script>
     if (!window.kr) {
         window.kr = {};
     }
@@ -553,32 +718,26 @@ Hexo Awesome: https://github.com/hexojs/awesome-...
 </script>
 
 
-    <script async src="/js/candy.min.js"></script>
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 
 
 
-    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    
-    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
-    <meting-js
-        server="netease"
-        type="playlist"
-        id="2024502984"
-        order="default"
-        fixed="true"
-    >
-    </meting-js>
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
 
 
-
-    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-<script defer src="/js/kratosr.min.js"></script>
-<script defer src="/js/pjax.min.js"></script>
+<script defer src="/js/kr-core.min.js"></script>
 
 
+  <script defer src="/js/kr-pjax.min.js"></script>
 
-<!-- Extra support for third-party plguins  -->
+
+<!-- 额外的追加注入项 -->
+
+  <script defer type="module" src="/comments/waline.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="/widgets/aplayer.js"></script>
+<script src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+
 
 
     </body>

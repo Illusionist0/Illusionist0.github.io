@@ -4,9 +4,11 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   
+    <link rel="icon" href="/assets/logo.jpg">
+  
   
   <title>【web3】创立一个Web3 Bank/Simplified | zennon&#39;s blog</title>
-  
+  <link rel="canonical" href="https://illusionist0.github.io/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/">
   <meta name="author" content="Zennon" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -35,53 +37,64 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://alist.zennon.top/d/image/image-20241201005726918.png?sign=KajQxsAUSo96SgWiIC3eZZhSstxbET7aB3KYQBs6SAQ=:0">
   
-  <!-- 站点验证相关 -->
-  
-    
-    
-    
-  
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
-    <script src="/js/kr-dark.min.js"></script>
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
   
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
-  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
-  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
-  
-  
-    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
   
   
-    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
   
-  
+  <!-- 自定义站点横幅和背景 -->
   <style>
     
       .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
+        background-image: url('https://dev.krt.moe/demo-assets/banner.webp');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner_dark.webp');
       }
     
     
       @media(min-width:768px) {
         body.custom-background {
-          background-image: url('/images/bg.webp');
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
         }
       }
     
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
   </style>
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
 
+  <!-- 额外的追加注入项 -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<link rel="stylesheet" href="/comments/waline.css" />
+<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+<link rel="stylesheet" href="/widgets/aplayer.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
     <body class="custom-background">
         <div id="kratos-wrapper">
@@ -93,12 +106,63 @@
                         <nav id="kratos-menu-wrap">
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
-                                    
-                                    
+                                    <li>
                                         
-                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                            <a href="/">
                                         
-                                    
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a>
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            链接
+                                        </a>
+                                        
+                                            <ul class="sub-menu">
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                            
+                                                                <i class="fa fa-code"></i>
+                                                            
+                                                            代码仓库
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://wiki.krt.moe">
+                                                            
+                                                                <i class="fa fa-book"></i>
+                                                            
+                                                            项目文档
+                                                        </a>
+                                                    </li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
                                 
                             </ul>
                         </nav>
@@ -108,8 +172,8 @@
             <header id="kratos-mobile-topnav" class="kratos-topnav">
                 <div class="container">
                     <div class="color-logo"><a href="/">zennon&#39;s blog</a></div>
-                    <div class="nav-toggle">
-                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
                             <i></i>
                         </a>
                     </div>
@@ -131,8 +195,154 @@
         <div id="kratos-blog-post">
             <div class="container">
                 <div id="main" class="row">
-                    
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+                <h1 class="kratos-page-title text-center" itemprop="name headline">【web3】创立一个Web3 Bank/Simplified</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2024-11-30T16:44:51.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-12-01</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
                         
+                        
+                            ~2.19K
+                        
+                        字
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/" class="waline-pageview-count"> </span> 次阅读
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/" class="waline-comment-count"> </span> 条评论
+                    </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#0-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">0.引言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFWeb3%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是Web3？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#IDE%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.</span> <span class="toc-text">IDE选择</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%BC%96%E5%86%99Hello-World"><span class="toc-number"></span> <span class="toc-text">1.编写Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E4%BB%A3%E7%A0%81"><span class="toc-number">0.1.</span> <span class="toc-text">合约代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2"><span class="toc-number">0.2.</span> <span class="toc-text">合约部署</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8F%91%E8%A1%8CERC20%E4%BB%A3%E5%B8%81"><span class="toc-number">1.</span> <span class="toc-text">2.发行ERC20代币</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%A3%E5%B8%81%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">代币实现原理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%A3%E5%B8%81%E5%90%88%E7%BA%A6"><span class="toc-number">1.2.</span> <span class="toc-text">代币合约</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BB%A3%E5%B8%81%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.3.</span> <span class="toc-text">合约部署及代币添加</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1%E5%90%88%E7%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">3.银行业务合约</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ERC20-%E6%8E%88%E6%9D%83"><span class="toc-number">2.1.</span> <span class="toc-text">ERC20-授权</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#EIP2612-%E7%A6%BB%E7%BA%BF%E7%AD%BE%E5%90%8D%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">EIP2612-离线签名优化</span></a></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h5 id="0-引言"><a href="#0-引言" class="headerlink" title="0.引言"></a>0.引言</h5><h6 id="什么是Web3？"><a href="#什么是Web3？" class="headerlink" title="什么是Web3？"></a>什么是Web3？</h6><p>web3是一种区别于web2的新型互联网协议，核心特征是<u><strong>以用户为中心的可信的价值互联网</strong></u>。其基本逻辑为用户自主，<strong>去中心化</strong>。</p>
+<h6 id="IDE选择"><a href="#IDE选择" class="headerlink" title="IDE选择"></a>IDE选择</h6><p>通常选择主流IDE Remix：remix.ethereum.org</p>
+<p>这个IDE采用solidty语言（一种语法无限接近js的语言）编写合约代码，支持基本的AI问答，能够快速帮你熟悉并上手</p>
+<h4 id="1-编写Hello-World"><a href="#1-编写Hello-World" class="headerlink" title="1.编写Hello World"></a>1.编写Hello World</h4><h6 id="合约代码"><a href="#合约代码" class="headerlink" title="合约代码"></a>合约代码</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">contract helloworld&#123;</span><br><span class="line">    function hello() public  pure returns(string memory)&#123;</span><br><span class="line">        return &quot;Hello World&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解析：合约基本都需要一个SPDX license，一般是MIT、GPL3这种，pragma用来声明solidty版本（具体可以在remix版本查看）</p>
+<p>public&#x2F;private 合约名</p>
+<p>pure&#x2F;view 合约</p>
+<p>memory</p>
+<h6 id="合约部署"><a href="#合约部署" class="headerlink" title="合约部署"></a>合约部署</h6><p>完成合约撰写后第一步就是部署，部署的步骤分为：</p>
+<ol>
+<li>cmd&#x2F;ctrl+S，编译</li>
+<li>部署到选定网络（remix默认网&#x2F;testnet）</li>
+<li>开始使用合约中的方法helloworld（将会消耗gas）</li>
+<li>cmd line会显示账户地址和合约部署地址</li>
+</ol>
+<p><img src="https://alist.zennon.top/d/image/image-20241201005726918.png?sign=KajQxsAUSo96SgWiIC3eZZhSstxbET7aB3KYQBs6SAQ=:0" alt="image-20241201005726918"></p>
+<p>其中，from是账户地址，to是合约地址，执行会消耗gas（单位为wei，1Gwei&#x3D;10^9wei）</p>
+<h5 id="2-发行ERC20代币"><a href="#2-发行ERC20代币" class="headerlink" title="2.发行ERC20代币"></a>2.发行ERC20代币</h5><h6 id="代币实现原理"><a href="#代币实现原理" class="headerlink" title="代币实现原理"></a>代币实现原理</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mapping（address =&gt; uint) //同质化代币 账户地址-&gt;余额</span><br><span class="line">mapping（uint =&gt; address) //NFT Token ID-&gt; 账户地址</span><br></pre></td></tr></table></figure>
+
+<h6 id="代币合约"><a href="#代币合约" class="headerlink" title="代币合约"></a>代币合约</h6><p>myFirstToken.sol</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">contract myfirstToken&#123;</span><br><span class="line">    mapping(address=&gt;uint)balance;</span><br><span class="line">    string name;//Bitcoin</span><br><span class="line">    string symbol;//BTC </span><br><span class="line">    constructor(string memory _name,string memory _symbol)&#123;</span><br><span class="line">        _name=name;</span><br><span class="line">        _symbol=symbol;</span><br><span class="line">        _mint(msg.sender,10000 *10**18);//2100</span><br><span class="line">    &#125;</span><br><span class="line">    function _mint(address owner,uint amount) private &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    function transfer(address to,uint amount) public returns (bool)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    // ERC20协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>solidty没有浮点数，采用浮点类型会产生精度损失，因此采用10**18来计算，最小单位是wei，&#x3D;1ether</p>
+<p>myERC20Token.sol</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">import &quot;@openzeppelin/contracts/token/ERC20/ERC20.sol&quot;;</span><br><span class="line"></span><br><span class="line">contract mtERC20Token is ERC20 &#123;</span><br><span class="line">    constructor(string memory name_, string memory symbol_)</span><br><span class="line">        ERC20(name_, symbol_)</span><br><span class="line">    &#123;</span><br><span class="line">        _mint(msg.sender, 10000 * 10**18);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ERC20协议是主流协议之一，此外在open zeppelin库中还支持很多协议，如1155等。</p>
+<h6 id="合约部署及代币添加"><a href="#合约部署及代币添加" class="headerlink" title="合约部署及代币添加"></a>合约部署及代币添加</h6><p>在name中写全称，symbol填上缩写，然后点击transact即可部署到Remix测试网以及Sepolia测试网（水龙头可以获取airdrop，不过现在国内好像ban了，只能到闲鱼去买了，我是3月领的测试币）</p>
+<p>部署后可以view on etherscan，查看你的合约地址，然后添加到你的MetaMask钱包（自行注册，保存m好助记词）</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241201120651530.png?sign=PxJW5xH6HFezo56ZPAwvnSwmppKpYrR7Ld0kVYsGgbQ=:0" alt="image-20241201120651530"></p>
+<p>这就是XX（your symbol）代币创建的过程，创建的过程本质是从创世链上发送一定数量（同mint的第二参数）的初始代币给新币创建人</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241201120516171.png?sign=rvIjyaYEdeAqqFSoCitbAkVQ34E8qWkr0E9ru-mQ3k8=:0" alt="image-20241201120516171"></p>
+<h5 id="3-银行业务合约"><a href="#3-银行业务合约" class="headerlink" title="3.银行业务合约"></a>3.银行业务合约</h5><h6 id="ERC20-授权"><a href="#ERC20-授权" class="headerlink" title="ERC20-授权"></a>ERC20-授权</h6><p><img src="https://alist.zennon.top/d/image/image-20241201125117753.png?sign=zBgUyP3Qx8ZFMe_m5nY1iDPa_eGFxlf7yrPc72chNkI=:0" alt="image-20241201125117753"></p>
+<h6 id="EIP2612-离线签名优化"><a href="#EIP2612-离线签名优化" class="headerlink" title="EIP2612-离线签名优化"></a>EIP2612-离线签名优化</h6><p><img src="https://alist.zennon.top/d/image/image-20241201125204087.png?sign=h1Un8XH79DyxE46KoR8aw_bflW81Gtir9mhw_7jr_i4=:0" alt="image-20241201125204087"></p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-12-06T06:48:44.635Z" itemprop="dateModified">最后编辑：2024-12-06</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【hexo】免费SSL证书的申请" href="/2024/11/28/【hexo】免费SSL证书的申请/"><i class="fa fa-angle-left"></i> 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 【每日随笔】大雪" href="/2024/12/06/【每日随笔】大雪/">下一篇 <i class="fa fa-angle-right"></i></a>
+            </div>
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            <div id="w-comments" class="kr-comments" data-path="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"></div>
+        </div>
+    
+</article>
+
+        
+
+            </section>
+
+            
+                
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
@@ -142,7 +352,7 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+            <img class="about-photo" src="/assets/avatar.jpg" alt="Zennon" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
@@ -192,7 +402,7 @@
                 
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
-    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类列表</h4>
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
   </aside>
 
@@ -216,31 +426,31 @@
         
           
           
-            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa  fa-book"></i> test</a>
+            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa fa-book"></i> test</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa  fa-book"></i> 【Web3】Trading View</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa fa-book"></i> 【Web3】Trading View</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa  fa-book"></i> 【每日随笔】大雪</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa fa-book"></i> 【每日随笔】大雪</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa fa-book"></i> 【hexo】免费SSL证书的申请</a>
             
           
         
@@ -283,249 +493,59 @@
             
     </div>
 </section>
-                    
+            
 
         
 
-            <section class="col-md-8">
-
-        
-
-            <article itemscope itemtype="https://schema.org/Article">
-    
-    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/">
-    <div class="kratos-hentry kratos-post-inner clearfix">
-        <header class="kratos-entry-header">
-            
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">【web3】创立一个Web3 Bank/Simplified</h1>
-            
-            
-            <ul class="kratos-post-meta text-center">
-                <li><time datetime="2024-11-30T16:44:51.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-12-01</time></li>
-                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
-                </li>
-                
-                    <li>
-                        <i class="fa fa-edit"></i> 
-                        
-                        
-                            ~2.19K
-                        
-                        字
-                    </li>
-                
-                
-            </ul>
-        </header>
-        <div class="kratos-post-content">
-            
-            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1733467724635"></time> 前，其中的内容可能需要更新。</p></div>
-            </div>
-            
-            
-            
-                <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#0-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">0.引言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFWeb3%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是Web3？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#IDE%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.</span> <span class="toc-text">IDE选择</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%BC%96%E5%86%99Hello-World"><span class="toc-number"></span> <span class="toc-text">1.编写Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E4%BB%A3%E7%A0%81"><span class="toc-number">0.1.</span> <span class="toc-text">合约代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2"><span class="toc-number">0.2.</span> <span class="toc-text">合约部署</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8F%91%E8%A1%8CERC20%E4%BB%A3%E5%B8%81"><span class="toc-number">1.</span> <span class="toc-text">2.发行ERC20代币</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%A3%E5%B8%81%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">代币实现原理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%A3%E5%B8%81%E5%90%88%E7%BA%A6"><span class="toc-number">1.2.</span> <span class="toc-text">代币合约</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BB%A3%E5%B8%81%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.3.</span> <span class="toc-text">合约部署及代币添加</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1%E5%90%88%E7%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">3.银行业务合约</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ERC20-%E6%8E%88%E6%9D%83"><span class="toc-number">2.1.</span> <span class="toc-text">ERC20-授权</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#EIP2612-%E7%A6%BB%E7%BA%BF%E7%AD%BE%E5%90%8D%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">EIP2612-离线签名优化</span></a></li></ol></li></ol>
                 </div>
-            
-            <hr />
-            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h5 id="0-引言"><a href="#0-引言" class="headerlink" title="0.引言"></a>0.引言</h5><h6 id="什么是Web3？"><a href="#什么是Web3？" class="headerlink" title="什么是Web3？"></a>什么是Web3？</h6><p>web3是一种区别于web2的新型互联网协议，核心特征是<u><strong>以用户为中心的可信的价值互联网</strong></u>。其基本逻辑为用户自主，<strong>去中心化</strong>。</p>
-<h6 id="IDE选择"><a href="#IDE选择" class="headerlink" title="IDE选择"></a>IDE选择</h6><p>通常选择主流IDE Remix：remix.ethereum.org</p>
-<p>这个IDE采用solidty语言（一种语法无限接近js的语言）编写合约代码，支持基本的AI问答，能够快速帮你熟悉并上手</p>
-<h4 id="1-编写Hello-World"><a href="#1-编写Hello-World" class="headerlink" title="1.编写Hello World"></a>1.编写Hello World</h4><h6 id="合约代码"><a href="#合约代码" class="headerlink" title="合约代码"></a>合约代码</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">contract helloworld&#123;</span><br><span class="line">    function hello() public  pure returns(string memory)&#123;</span><br><span class="line">        return &quot;Hello World&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>解析：合约基本都需要一个SPDX license，一般是MIT、GPL3这种，pragma用来声明solidty版本（具体可以在remix版本查看）</p>
-<p>public&#x2F;private 合约名</p>
-<p>pure&#x2F;view 合约</p>
-<p>memory</p>
-<h6 id="合约部署"><a href="#合约部署" class="headerlink" title="合约部署"></a>合约部署</h6><p>完成合约撰写后第一步就是部署，部署的步骤分为：</p>
-<ol>
-<li>cmd&#x2F;ctrl+S，编译</li>
-<li>部署到选定网络（remix默认网&#x2F;testnet）</li>
-<li>开始使用合约中的方法helloworld（将会消耗gas）</li>
-<li>cmd line会显示账户地址和合约部署地址</li>
-</ol>
-<p><img src="https://alist.zennon.top/d/image/image-20241201005726918.png?sign=KajQxsAUSo96SgWiIC3eZZhSstxbET7aB3KYQBs6SAQ=:0" alt="image-20241201005726918"></p>
-<p>其中，from是账户地址，to是合约地址，执行会消耗gas（单位为wei，1Gwei&#x3D;10^9wei）</p>
-<h5 id="2-发行ERC20代币"><a href="#2-发行ERC20代币" class="headerlink" title="2.发行ERC20代币"></a>2.发行ERC20代币</h5><h6 id="代币实现原理"><a href="#代币实现原理" class="headerlink" title="代币实现原理"></a>代币实现原理</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mapping（address =&gt; uint) //同质化代币 账户地址-&gt;余额</span><br><span class="line">mapping（uint =&gt; address) //NFT Token ID-&gt; 账户地址</span><br></pre></td></tr></table></figure>
-
-<h6 id="代币合约"><a href="#代币合约" class="headerlink" title="代币合约"></a>代币合约</h6><p>myFirstToken.sol</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">contract myfirstToken&#123;</span><br><span class="line">    mapping(address=&gt;uint)balance;</span><br><span class="line">    string name;//Bitcoin</span><br><span class="line">    string symbol;//BTC </span><br><span class="line">    constructor(string memory _name,string memory _symbol)&#123;</span><br><span class="line">        _name=name;</span><br><span class="line">        _symbol=symbol;</span><br><span class="line">        _mint(msg.sender,10000 *10**18);//2100</span><br><span class="line">    &#125;</span><br><span class="line">    function _mint(address owner,uint amount) private &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    function transfer(address to,uint amount) public returns (bool)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    // ERC20协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>solidty没有浮点数，采用浮点类型会产生精度损失，因此采用10**18来计算，最小单位是wei，&#x3D;1ether</p>
-<p>myERC20Token.sol</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line"></span><br><span class="line">pragma solidity &gt;=0.7.0 &lt;0.9.0;</span><br><span class="line"></span><br><span class="line">import &quot;@openzeppelin/contracts/token/ERC20/ERC20.sol&quot;;</span><br><span class="line"></span><br><span class="line">contract mtERC20Token is ERC20 &#123;</span><br><span class="line">    constructor(string memory name_, string memory symbol_)</span><br><span class="line">        ERC20(name_, symbol_)</span><br><span class="line">    &#123;</span><br><span class="line">        _mint(msg.sender, 10000 * 10**18);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>ERC20协议是主流协议之一，此外在open zeppelin库中还支持很多协议，如1155等。</p>
-<h6 id="合约部署及代币添加"><a href="#合约部署及代币添加" class="headerlink" title="合约部署及代币添加"></a>合约部署及代币添加</h6><p>在name中写全称，symbol填上缩写，然后点击transact即可部署到Remix测试网以及Sepolia测试网（水龙头可以获取airdrop，不过现在国内好像ban了，只能到闲鱼去买了，我是3月领的测试币）</p>
-<p>部署后可以view on etherscan，查看你的合约地址，然后添加到你的MetaMask钱包（自行注册，保存m好助记词）</p>
-<p><img src="https://alist.zennon.top/d/image/image-20241201120651530.png?sign=PxJW5xH6HFezo56ZPAwvnSwmppKpYrR7Ld0kVYsGgbQ=:0" alt="image-20241201120651530"></p>
-<p>这就是XX（your symbol）代币创建的过程，创建的过程本质是从创世链上发送一定数量（同mint的第二参数）的初始代币给新币创建人</p>
-<p><img src="https://alist.zennon.top/d/image/image-20241201120516171.png?sign=rvIjyaYEdeAqqFSoCitbAkVQ34E8qWkr0E9ru-mQ3k8=:0" alt="image-20241201120516171"></p>
-<h5 id="3-银行业务合约"><a href="#3-银行业务合约" class="headerlink" title="3.银行业务合约"></a>3.银行业务合约</h5><h6 id="ERC20-授权"><a href="#ERC20-授权" class="headerlink" title="ERC20-授权"></a>ERC20-授权</h6><p><img src="https://alist.zennon.top/d/image/image-20241201125117753.png?sign=zBgUyP3Qx8ZFMe_m5nY1iDPa_eGFxlf7yrPc72chNkI=:0" alt="image-20241201125117753"></p>
-<h6 id="EIP2612-离线签名优化"><a href="#EIP2612-离线签名优化" class="headerlink" title="EIP2612-离线签名优化"></a>EIP2612-离线签名优化</h6><p><img src="https://alist.zennon.top/d/image/image-20241201125204087.png?sign=h1Un8XH79DyxE46KoR8aw_bflW81Gtir9mhw_7jr_i4=:0" alt="image-20241201125204087"></p>
-</div>
-        </div>
-        
-            <div class="kratos-copyright text-center clearfix">
-                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
-            </div>
-        
-        <footer class="kratos-entry-footer clearfix">
-            
-                <div class="post-like-donate text-center clearfix" id="post-like-donate">
-                
-                
-                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
-                    <div class="share-wrap" style="display: none;">
-    <div class="share-group">
-        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-qq"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-star"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-weixin"></i>
-            </div>
-            <div class="share-int">
-                <div class="qrcode" id="wechat-qr"></div>
-                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-weibo"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-facebook"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-twitter"></i>
-            </div>
-        </a>
-    </div>
-    <script type="text/javascript">
-        $(()=>{
-            new QRCode("wechat-qr", {
-                text: "https://illusionist0.github.io/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/",
-                width: 150,
-                height: 150,
-                correctLevel : QRCode.CorrectLevel.H
-            });
-        });
-        function share(dest) {
-            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
-            const weiboBase     = "https://service.weibo.com/share/share.php?";
-            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
-            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
-            const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://illusionist0.github.io/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/";
-            const title         = "「【web3】创立一个Web3 Bank/Simplified」";
-            const excerpt       = ` 0.引言什么是Web3？web3是一种区别于web2的新型互联网协议，核心特征是以用户为中心的可信的价值互联网。其基本逻辑为用户自主，去中心化。
-IDE选择通常选择主流IDE Remix：remix.ethereum.org
-这个I...`;
-            let _URL;
-            switch (dest) {
-                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
-                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
-                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
-                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
-                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
-            }
-            window.open(_URL);
-        };
-    </script>
-</div>
-                
-                </div>
-            
-            <div class="footer-tag clearfix">
-                <div class="pull-left">
-                <i class="fa fa-tags"></i>
-                    
-                </div>
-                <div class="pull-date">
-                    <time datetime="2024-12-06T06:48:44.635Z" itemprop="dateModified">最后编辑：2024-12-06</time>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-        <nav class="navigation post-navigation clearfix" role="navigation">
-            
-            <div class="nav-previous clearfix">
-                <a title=" 【hexo】免费SSL证书的申请" href="/2024/11/28/【hexo】免费SSL证书的申请/">&lt; 上一篇</a>
-            </div>
-            
-            
-            <div class="nav-next clearfix">
-                <a title=" 【每日随笔】大雪" href="/2024/12/06/【每日随笔】大雪/">下一篇 &gt;</a>
-            </div>
-            
-        </nav>
-    
-    
-</article>
-
-        
-
-            </section>
-
-        
-
-                
-        </div>
     </div>
 </div>
+
 <footer>
-    <div id="footer"  class="ap-lrc"  >
+    <div id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
-                        <!-- Keep for compatibility -->
                         
+                            <li>
+                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
                         
-                        
-                        
-                        
-                        
-                        
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Illusionist0"><i class="fa fa-github"></i></a></li>
-                        
-                        <!-- New links -->
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
                             <li>&copy; 2024 zennon's blog 版权所有.</li>
-                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                            <li>本站已在风雨中飘摇<span id="kr-since">Loading...</span></li>
                         </div>
                         <div>
-                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
-                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Zennon.</li>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">Zennon</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
                         </div>
-                        <div>
-                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
-                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
-                        </div>
-                        <div>
-                            
-                            
-                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                                    <li>您是本站的第 <span data-path="/index.html" class="waline-pageview-count"></span> 位访客</li>
+                                
+                                    <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">工信部备案号</a></li>
+                                
+                                    <li><a href="http://www.beian.gov.cn" rel="external nofollow" target="_blank"><img src="https://www.unpkg.com/hexo-theme-kratos-rebirth@2.2.0/source/images/psr.webp" width="12" height="12" loading="lazy" decoding="auto" />公安备案号</a></li>
+                                
+                            </div>
+                        
                     </ul>
                 </div>
             </div>
@@ -534,20 +554,16 @@ IDE选择通常选择主流IDE Remix：remix.ethereum.org
             <div class="tool">
                 
                     <div class="box search-box">
-                        <a href="/search/">
+                        <a href="/search">
                             <span class="fa fa-search"></span>
                         </a>
                     </div>
                 
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
             </div>
-            <div class="box gotop-box">
+            <div id="gotop-box" class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
             </div>
         </div>
@@ -556,9 +572,80 @@ IDE选择通常选择主流IDE Remix：remix.ethereum.org
 </div>
 </div>
 
-        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
-<script>
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">赞助喵</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">非常感谢您的喜欢！ <i class="fa fa-heart" style="color:#d43f57"></i></div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+                    <img class="kr-donate-placeholder" src="https://dev.krt.moe/demo-assets/donate.webp" alt="赞助喵" />
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
+                    
+                        <button class="kr-donate-platform-button" style="color: skyblue;" title="模拟支付" onclick="krDonateModalShowPlatformQR('example_payment', 'skyblue')">
+                            <i class="fa fa-credit-card"></i>
+                        </button>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享这一刻</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">让朋友们也来瞅瞅！</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+                    <button class="kr-share-platform-button" style="color: #62b6e7;" title="喵窝" onclick="krShareModalOpenPlatform('https://nya.one/share?text=%3E%20$TITLE%0A%3E%0A%3E%20$SUMMARY%0A----%20$SITE%0A%0A$URL')">
+                        <svg fill="currentColor" width="18" height="18" viewBox="0 0 329 388"><path d="M0,36.226c0,-19.993 16.233,-36.226 36.226,-36.226c13.788,0 25.787,7.719 31.908,19.068l188.366,229.845l0,-111.259c-6.356,5.508 -14.645,8.843 -23.707,8.843c-19.994,0 -36.226,-16.232 -36.226,-36.226c-0,-8.551 2.968,-16.413 7.93,-22.613l-0.015,-0.013l56.614,-69.08c6.2,-11.073 18.047,-18.565 31.63,-18.565c19.994,0 36.227,16.233 36.227,36.226l-0,314.644c-0,19.994 -16.233,36.226 -36.227,36.226c-13.166,0 -24.701,-7.039 -31.044,-17.555l-189.229,-230.899l-0,212.228c-0,19.994 -16.233,36.226 -36.227,36.226c-19.993,0 -36.226,-16.232 -36.226,-36.226l0,-314.644Z" /></svg>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+    <div id="aplayer"></div>
+<meting-js server="netease" type="playlist" id="60198" fixed="true"></meting-js>
+
+
+
+        <script>
     if (!window.kr) {
         window.kr = {};
     }
@@ -567,32 +654,26 @@ IDE选择通常选择主流IDE Remix：remix.ethereum.org
 </script>
 
 
-    <script async src="/js/candy.min.js"></script>
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 
 
 
-    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    
-    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
-    <meting-js
-        server="netease"
-        type="playlist"
-        id="2024502984"
-        order="default"
-        fixed="true"
-    >
-    </meting-js>
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
 
 
-
-    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-<script defer src="/js/kratosr.min.js"></script>
-<script defer src="/js/pjax.min.js"></script>
+<script defer src="/js/kr-core.min.js"></script>
 
 
+  <script defer src="/js/kr-pjax.min.js"></script>
 
-<!-- Extra support for third-party plguins  -->
+
+<!-- 额外的追加注入项 -->
+
+  <script defer type="module" src="/comments/waline.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="/widgets/aplayer.js"></script>
+<script src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+
 
 
     </body>

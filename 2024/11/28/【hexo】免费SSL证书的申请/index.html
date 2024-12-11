@@ -4,9 +4,11 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   
+    <link rel="icon" href="/assets/logo.jpg">
+  
   
   <title>【hexo】免费SSL证书的申请 | zennon&#39;s blog</title>
-  
+  <link rel="canonical" href="https://illusionist0.github.io/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/">
   <meta name="author" content="Zennon" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -33,53 +35,64 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://static.fjy.zone/images/http-ca-cf-free-9.png">
   
-  <!-- 站点验证相关 -->
-  
-    
-    
-    
-  
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
-    <script src="/js/kr-dark.min.js"></script>
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
   
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
-  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
-  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
-  
-  
-    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
   
   
-    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
   
-  
+  <!-- 自定义站点横幅和背景 -->
   <style>
     
       .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
+        background-image: url('https://dev.krt.moe/demo-assets/banner.webp');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner_dark.webp');
       }
     
     
       @media(min-width:768px) {
         body.custom-background {
-          background-image: url('/images/bg.webp');
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
         }
       }
     
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
   </style>
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
 
+  <!-- 额外的追加注入项 -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<link rel="stylesheet" href="/comments/waline.css" />
+<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+<link rel="stylesheet" href="/widgets/aplayer.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
     <body class="custom-background">
         <div id="kratos-wrapper">
@@ -91,12 +104,63 @@
                         <nav id="kratos-menu-wrap">
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
-                                    
-                                    
+                                    <li>
                                         
-                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                            <a href="/">
                                         
-                                    
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a>
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            链接
+                                        </a>
+                                        
+                                            <ul class="sub-menu">
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                            
+                                                                <i class="fa fa-code"></i>
+                                                            
+                                                            代码仓库
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://wiki.krt.moe">
+                                                            
+                                                                <i class="fa fa-book"></i>
+                                                            
+                                                            项目文档
+                                                        </a>
+                                                    </li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
                                 
                             </ul>
                         </nav>
@@ -106,8 +170,8 @@
             <header id="kratos-mobile-topnav" class="kratos-topnav">
                 <div class="container">
                     <div class="color-logo"><a href="/">zennon&#39;s blog</a></div>
-                    <div class="nav-toggle">
-                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
                             <i></i>
                         </a>
                     </div>
@@ -129,8 +193,144 @@
         <div id="kratos-blog-post">
             <div class="container">
                 <div id="main" class="row">
-                    
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+                <h1 class="kratos-page-title text-center" itemprop="name headline">【hexo】免费SSL证书的申请</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2024-11-28T12:18:09.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-11-28</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
                         
+                        
+                            ~1.60K
+                        
+                        字
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" class="waline-pageview-count"> </span> 次阅读
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/" class="waline-comment-count"> </span> 条评论
+                    </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#SSL%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">SSL介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8SSL%E8%AF%81%E4%B9%A6"><span class="toc-number">2.</span> <span class="toc-text">为什么要用SSL证书</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7"><span class="toc-number">3.</span> <span class="toc-text">免费SSL证书如何申请</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-LetsEncrypt"><span class="toc-number">3.1.</span> <span class="toc-text">1.LetsEncrypt</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-Cloudflare-%E7%A7%91%E8%B5%8B%E9%94%90"><span class="toc-number">3.2.</span> <span class="toc-text">2.Cloudflare 科赋锐</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Nginx%E9%83%A8%E7%BD%B2"><span class="toc-number">3.3.</span> <span class="toc-text">3.Nginx部署</span></a></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h5 id="SSL介绍"><a href="#SSL介绍" class="headerlink" title="SSL介绍"></a>SSL介绍</h5><p>SSL证书是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/326874?fromModule=lemma_inlink">数字证书</a>的一种，类似于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A9%BE%E9%A9%B6%E8%AF%81/10948496?fromModule=lemma_inlink">驾驶证</a>、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6/808219?fromModule=lemma_inlink">服务器证书</a>。</p>
+<p>SSL 证书就是遵守 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SSL%E5%8D%8F%E8%AE%AE/4602579?fromModule=lemma_inlink">SSL协议</a>，由受信任的数字证书颁发机构<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CA/20721560?fromModule=lemma_inlink">CA</a>，在验证服务器身份后颁发，具有服务器<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/2193233?fromModule=lemma_inlink">身份验证</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/2987565?fromModule=lemma_inlink">数据传输</a>加密功能。</p>
+<p>SSL证书通过在客户端浏览器和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/0?fromModule=lemma_inlink">Web服务器</a>之间建立一条SSL安全通道（Secure socket layerSSL）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/231526?fromModule=lemma_inlink">安全协议</a>是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E6%95%B4%E6%80%A7/949221?fromModule=lemma_inlink">完整性</a>，现已成为该领域中<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%A8%E7%90%83%E5%8C%96/489841?fromModule=lemma_inlink">全球化</a>的标准。由于SSL技术已建立到所有主要的浏览器和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/WEB%E6%9C%8D%E5%8A%A1%E5%99%A8/8390210?fromModule=lemma_inlink">WEB服务器</a>程序中，因此，仅需安装<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6/808219?fromModule=lemma_inlink">服务器证书</a>就可以激活该功能了，即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露，保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/212550?fromModule=lemma_inlink">数字签名</a>又名数字标识、签章 (即 Digital Certificate，Digital ID )，提供了一种在网上进行身份验证的方法，是用来标志和证明<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548?fromModule=lemma_inlink">网络通信</a>双方身份的数字<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6/1705035?fromModule=lemma_inlink">信息文件</a>，概念类似日常生活中的司机驾照或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BA%AB%E4%BB%BD%E8%AF%81/113951?fromModule=lemma_inlink">身份证</a>。 <strong>数字签名</strong>主要用于发送安全<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106?fromModule=lemma_inlink">电子邮件</a>、访问安全站点、网上<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8B%9B%E6%A0%87%E4%B8%8E%E6%8A%95%E6%A0%87/5573203?fromModule=lemma_inlink">招标与投标</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E4%B8%8A%E7%AD%BE%E7%BA%A6/2458805?fromModule=lemma_inlink">网上签约</a>、网上订购、网上公文安全传送、网上办公、网上缴费、网上缴税以及网上购物等安全的网上<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93/906318?fromModule=lemma_inlink">电子交易</a>活动。</p>
+<h5 id="为什么要用SSL证书"><a href="#为什么要用SSL证书" class="headerlink" title="为什么要用SSL证书"></a>为什么要用SSL证书</h5><p>在配置图床的过程中遇到了下面bug，这个bug导致我无法通过网络访问图床上的图片，本地不影响。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mixed Content: The page at &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27; was loaded over HTTPS, but requested an insecure element &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27;. This request was not upgraded to HTTPS because its URL&#x27;s host is an IP address.</span><br><span class="line">  </span><br><span class="line">Mixed Content: The page at &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27; was loaded over HTTPS, but requested an insecure image &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27;. This request has been blocked; the content must be served over HTTPS.</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因分析</strong>：</p>
+<p>HTTPS无法加载来自HTTP的链接，必须对链接进行升级，http升级为https需要ssl证书</p>
+<h5 id="免费SSL证书如何申请"><a href="#免费SSL证书如何申请" class="headerlink" title="免费SSL证书如何申请"></a>免费SSL证书如何申请</h5><p>参考网址：<a target="_blank" rel="noopener" href="https://blog.fjy.zone/archives/http-ca-cf-free">https://blog.fjy.zone/archives/http-ca-cf-free</a></p>
+<h6 id="1-LetsEncrypt"><a href="#1-LetsEncrypt" class="headerlink" title="1.LetsEncrypt"></a>1.LetsEncrypt</h6><p>主流的免费SSL&#x2F;TLS证书，有效期约90天</p>
+<p>参考链接：🔗<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eu4y1x7Sk?spm_id_from=333.788.recommend_more_video.1&vd_source=ee0fe132fcd2c02235064dc40c43c4ad">最好用的免费 HTTPS 证书服务 LetsEncrypt 没有之一</a></p>
+<p><img src="https://static.fjy.zone/images/http-ca-cf-free-9.png" alt="img"></p>
+<p><strong>前提条件</strong></p>
+<p>1.Nginx 网站已经配置好了</p>
+<p>2.域名指向该服务器，且可被外网访问</p>
+<p><strong>步骤</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get -y install certbot</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get -y install python3-certbot-nginx</span><br><span class="line">$ <span class="built_in">sudo</span> certbot --nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="2-Cloudflare-科赋锐"><a href="#2-Cloudflare-科赋锐" class="headerlink" title="2.Cloudflare 科赋锐"></a>2.Cloudflare 科赋锐</h6><p>首先，设置加密为安全（严格）</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241129013806573.png?sign=SpIz0BalT7mHrmHHVOO2DTx6VOhPEd6YssC61y0JjIY=:0" alt="image-20241129013806573"></p>
+<p>然后，创建证书，证书级别为E1，比LetsEncrypt的R3有效期要更长</p>
+<p><img src="https://alist.zennon.top/d/image/image-20241129013839019.png?sign=JKEAjgwuHCmTk3p3eZcWWEVyZgACLkcl_8N1oaANwoQ=:0" alt="image-20241129013839019"></p>
+<h6 id="3-Nginx部署"><a href="#3-Nginx部署" class="headerlink" title="3.Nginx部署"></a>3.Nginx部署</h6><p>设置反向代理，并在&#x2F;etc&#x2F;nginx&#x2F;cert下添加pem和key文件</p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-12-06T01:43:56.685Z" itemprop="dateModified">最后编辑：2024-12-06</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【Supabase】开源的Postgresql数据库管理" href="/2024/11/27/【Supabase】开源的Postgresql数据库管理/"><i class="fa fa-angle-left"></i> 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 【web3】创立一个Web3 Bank/Simplified" href="/2024/12/01/【web3】创立一个Web3-Bank-Simplified/">下一篇 <i class="fa fa-angle-right"></i></a>
+            </div>
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            <div id="w-comments" class="kr-comments" data-path="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"></div>
+        </div>
+    
+</article>
+
+        
+
+            </section>
+
+            
+                
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
@@ -140,7 +340,7 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+            <img class="about-photo" src="/assets/avatar.jpg" alt="Zennon" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
@@ -190,7 +390,7 @@
                 
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
-    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类列表</h4>
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
   </aside>
 
@@ -214,31 +414,31 @@
         
           
           
-            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa  fa-book"></i> test</a>
+            <a class="list-group-item" href="/2024/12/09/test/"><i class="fa fa-book"></i> test</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa  fa-book"></i> 【Web3】Trading View</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa fa-book"></i> 【Web3】Trading View</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa  fa-book"></i> 【每日随笔】大雪</a>
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa fa-book"></i> 【每日随笔】大雪</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa  fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa  fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa fa-book"></i> 【hexo】免费SSL证书的申请</a>
             
           
         
@@ -281,238 +481,59 @@
             
     </div>
 </section>
-                    
+            
 
         
 
-            <section class="col-md-8">
-
-        
-
-            <article itemscope itemtype="https://schema.org/Article">
-    
-    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/">
-    <div class="kratos-hentry kratos-post-inner clearfix">
-        <header class="kratos-entry-header">
-            
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">【hexo】免费SSL证书的申请</h1>
-            
-            
-            <ul class="kratos-post-meta text-center">
-                <li><time datetime="2024-11-28T12:18:09.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-11-28</time></li>
-                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
-                </li>
-                
-                    <li>
-                        <i class="fa fa-edit"></i> 
-                        
-                        
-                            ~1.60K
-                        
-                        字
-                    </li>
-                
-                
-            </ul>
-        </header>
-        <div class="kratos-post-content">
-            
-            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1733449436685"></time> 前，其中的内容可能需要更新。</p></div>
-            </div>
-            
-            
-            
-                <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#SSL%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">SSL介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8SSL%E8%AF%81%E4%B9%A6"><span class="toc-number">2.</span> <span class="toc-text">为什么要用SSL证书</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7"><span class="toc-number">3.</span> <span class="toc-text">免费SSL证书如何申请</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-LetsEncrypt"><span class="toc-number">3.1.</span> <span class="toc-text">1.LetsEncrypt</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-Cloudflare-%E7%A7%91%E8%B5%8B%E9%94%90"><span class="toc-number">3.2.</span> <span class="toc-text">2.Cloudflare 科赋锐</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Nginx%E9%83%A8%E7%BD%B2"><span class="toc-number">3.3.</span> <span class="toc-text">3.Nginx部署</span></a></li></ol></li></ol>
                 </div>
-            
-            <hr />
-            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h5 id="SSL介绍"><a href="#SSL介绍" class="headerlink" title="SSL介绍"></a>SSL介绍</h5><p>SSL证书是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/326874?fromModule=lemma_inlink">数字证书</a>的一种，类似于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A9%BE%E9%A9%B6%E8%AF%81/10948496?fromModule=lemma_inlink">驾驶证</a>、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6/808219?fromModule=lemma_inlink">服务器证书</a>。</p>
-<p>SSL 证书就是遵守 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SSL%E5%8D%8F%E8%AE%AE/4602579?fromModule=lemma_inlink">SSL协议</a>，由受信任的数字证书颁发机构<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CA/20721560?fromModule=lemma_inlink">CA</a>，在验证服务器身份后颁发，具有服务器<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/2193233?fromModule=lemma_inlink">身份验证</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/2987565?fromModule=lemma_inlink">数据传输</a>加密功能。</p>
-<p>SSL证书通过在客户端浏览器和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/0?fromModule=lemma_inlink">Web服务器</a>之间建立一条SSL安全通道（Secure socket layerSSL）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/231526?fromModule=lemma_inlink">安全协议</a>是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E6%95%B4%E6%80%A7/949221?fromModule=lemma_inlink">完整性</a>，现已成为该领域中<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%A8%E7%90%83%E5%8C%96/489841?fromModule=lemma_inlink">全球化</a>的标准。由于SSL技术已建立到所有主要的浏览器和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/WEB%E6%9C%8D%E5%8A%A1%E5%99%A8/8390210?fromModule=lemma_inlink">WEB服务器</a>程序中，因此，仅需安装<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%81%E4%B9%A6/808219?fromModule=lemma_inlink">服务器证书</a>就可以激活该功能了，即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露，保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/212550?fromModule=lemma_inlink">数字签名</a>又名数字标识、签章 (即 Digital Certificate，Digital ID )，提供了一种在网上进行身份验证的方法，是用来标志和证明<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548?fromModule=lemma_inlink">网络通信</a>双方身份的数字<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6/1705035?fromModule=lemma_inlink">信息文件</a>，概念类似日常生活中的司机驾照或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BA%AB%E4%BB%BD%E8%AF%81/113951?fromModule=lemma_inlink">身份证</a>。 <strong>数字签名</strong>主要用于发送安全<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106?fromModule=lemma_inlink">电子邮件</a>、访问安全站点、网上<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8B%9B%E6%A0%87%E4%B8%8E%E6%8A%95%E6%A0%87/5573203?fromModule=lemma_inlink">招标与投标</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E4%B8%8A%E7%AD%BE%E7%BA%A6/2458805?fromModule=lemma_inlink">网上签约</a>、网上订购、网上公文安全传送、网上办公、网上缴费、网上缴税以及网上购物等安全的网上<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93/906318?fromModule=lemma_inlink">电子交易</a>活动。</p>
-<h5 id="为什么要用SSL证书"><a href="#为什么要用SSL证书" class="headerlink" title="为什么要用SSL证书"></a>为什么要用SSL证书</h5><p>在配置图床的过程中遇到了下面bug，这个bug导致我无法通过网络访问图床上的图片，本地不影响。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mixed Content: The page at &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27; was loaded over HTTPS, but requested an insecure element &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27;. This request was not upgraded to HTTPS because its URL&#x27;s host is an IP address.</span><br><span class="line">  </span><br><span class="line">Mixed Content: The page at &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27; was loaded over HTTPS, but requested an insecure image &#x27;<span class="tag">&lt;<span class="name">URL</span>&gt;</span>&#x27;. This request has been blocked; the content must be served over HTTPS.</span><br></pre></td></tr></table></figure>
-
-<p><strong>原因分析</strong>：</p>
-<p>HTTPS无法加载来自HTTP的链接，必须对链接进行升级，http升级为https需要ssl证书</p>
-<h5 id="免费SSL证书如何申请"><a href="#免费SSL证书如何申请" class="headerlink" title="免费SSL证书如何申请"></a>免费SSL证书如何申请</h5><p>参考网址：<a target="_blank" rel="noopener" href="https://blog.fjy.zone/archives/http-ca-cf-free">https://blog.fjy.zone/archives/http-ca-cf-free</a></p>
-<h6 id="1-LetsEncrypt"><a href="#1-LetsEncrypt" class="headerlink" title="1.LetsEncrypt"></a>1.LetsEncrypt</h6><p>主流的免费SSL&#x2F;TLS证书，有效期约90天</p>
-<p>参考链接：🔗<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eu4y1x7Sk?spm_id_from=333.788.recommend_more_video.1&vd_source=ee0fe132fcd2c02235064dc40c43c4ad">最好用的免费 HTTPS 证书服务 LetsEncrypt 没有之一</a></p>
-<p><img src="https://static.fjy.zone/images/http-ca-cf-free-9.png" alt="img"></p>
-<p><strong>前提条件</strong></p>
-<p>1.Nginx 网站已经配置好了</p>
-<p>2.域名指向该服务器，且可被外网访问</p>
-<p><strong>步骤</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get -y install certbot</span><br><span class="line">$ sudo apt-get -y install python3-certbot-nginx</span><br><span class="line">$ sudo certbot --nginx</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="2-Cloudflare-科赋锐"><a href="#2-Cloudflare-科赋锐" class="headerlink" title="2.Cloudflare 科赋锐"></a>2.Cloudflare 科赋锐</h6><p>首先，设置加密为安全（严格）</p>
-<p><img src="https://alist.zennon.top/d/image/image-20241129013806573.png?sign=SpIz0BalT7mHrmHHVOO2DTx6VOhPEd6YssC61y0JjIY=:0" alt="image-20241129013806573"></p>
-<p>然后，创建证书，证书级别为E1，比LetsEncrypt的R3有效期要更长</p>
-<p><img src="https://alist.zennon.top/d/image/image-20241129013839019.png?sign=JKEAjgwuHCmTk3p3eZcWWEVyZgACLkcl_8N1oaANwoQ=:0" alt="image-20241129013839019"></p>
-<h6 id="3-Nginx部署"><a href="#3-Nginx部署" class="headerlink" title="3.Nginx部署"></a>3.Nginx部署</h6><p>设置反向代理，并在&#x2F;etc&#x2F;nginx&#x2F;cert下添加pem和key文件</p>
-</div>
-        </div>
-        
-            <div class="kratos-copyright text-center clearfix">
-                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
-            </div>
-        
-        <footer class="kratos-entry-footer clearfix">
-            
-                <div class="post-like-donate text-center clearfix" id="post-like-donate">
-                
-                
-                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
-                    <div class="share-wrap" style="display: none;">
-    <div class="share-group">
-        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-qq"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-star"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-weixin"></i>
-            </div>
-            <div class="share-int">
-                <div class="qrcode" id="wechat-qr"></div>
-                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-weibo"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-facebook"></i>
-            </div>
-        </a>
-        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
-            <div class="icon-wrap">
-                <i class="fa fa-twitter"></i>
-            </div>
-        </a>
-    </div>
-    <script type="text/javascript">
-        $(()=>{
-            new QRCode("wechat-qr", {
-                text: "https://illusionist0.github.io/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/",
-                width: 150,
-                height: 150,
-                correctLevel : QRCode.CorrectLevel.H
-            });
-        });
-        function share(dest) {
-            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
-            const weiboBase     = "https://service.weibo.com/share/share.php?";
-            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
-            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
-            const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://illusionist0.github.io/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/";
-            const title         = "「【hexo】免费SSL证书的申请」";
-            const excerpt       = ` SSL介绍SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。
-SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证...`;
-            let _URL;
-            switch (dest) {
-                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
-                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
-                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
-                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
-                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
-            }
-            window.open(_URL);
-        };
-    </script>
-</div>
-                
-                </div>
-            
-            <div class="footer-tag clearfix">
-                <div class="pull-left">
-                <i class="fa fa-tags"></i>
-                    
-                </div>
-                <div class="pull-date">
-                    <time datetime="2024-12-06T01:43:56.685Z" itemprop="dateModified">最后编辑：2024-12-06</time>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-        <nav class="navigation post-navigation clearfix" role="navigation">
-            
-            <div class="nav-previous clearfix">
-                <a title=" 【Supabase】开源的Postgresql数据库管理" href="/2024/11/27/【Supabase】开源的Postgresql数据库管理/">&lt; 上一篇</a>
-            </div>
-            
-            
-            <div class="nav-next clearfix">
-                <a title=" 【web3】创立一个Web3 Bank/Simplified" href="/2024/12/01/【web3】创立一个Web3-Bank-Simplified/">下一篇 &gt;</a>
-            </div>
-            
-        </nav>
-    
-    
-</article>
-
-        
-
-            </section>
-
-        
-
-                
-        </div>
     </div>
 </div>
+
 <footer>
-    <div id="footer"  class="ap-lrc"  >
+    <div id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
-                        <!-- Keep for compatibility -->
                         
+                            <li>
+                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
                         
-                        
-                        
-                        
-                        
-                        
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Illusionist0"><i class="fa fa-github"></i></a></li>
-                        
-                        <!-- New links -->
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
                             <li>&copy; 2024 zennon's blog 版权所有.</li>
-                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                            <li>本站已在风雨中飘摇<span id="kr-since">Loading...</span></li>
                         </div>
                         <div>
-                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
-                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Zennon.</li>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">Zennon</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
                         </div>
-                        <div>
-                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
-                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
-                        </div>
-                        <div>
-                            
-                            
-                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                                    <li>您是本站的第 <span data-path="/index.html" class="waline-pageview-count"></span> 位访客</li>
+                                
+                                    <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">工信部备案号</a></li>
+                                
+                                    <li><a href="http://www.beian.gov.cn" rel="external nofollow" target="_blank"><img src="https://www.unpkg.com/hexo-theme-kratos-rebirth@2.2.0/source/images/psr.webp" width="12" height="12" loading="lazy" decoding="auto" />公安备案号</a></li>
+                                
+                            </div>
+                        
                     </ul>
                 </div>
             </div>
@@ -521,20 +542,16 @@ SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，�
             <div class="tool">
                 
                     <div class="box search-box">
-                        <a href="/search/">
+                        <a href="/search">
                             <span class="fa fa-search"></span>
                         </a>
                     </div>
                 
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
             </div>
-            <div class="box gotop-box">
+            <div id="gotop-box" class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
             </div>
         </div>
@@ -543,9 +560,80 @@ SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，�
 </div>
 </div>
 
-        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
-<script>
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">赞助喵</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">非常感谢您的喜欢！ <i class="fa fa-heart" style="color:#d43f57"></i></div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+                    <img class="kr-donate-placeholder" src="https://dev.krt.moe/demo-assets/donate.webp" alt="赞助喵" />
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
+                    
+                        <button class="kr-donate-platform-button" style="color: skyblue;" title="模拟支付" onclick="krDonateModalShowPlatformQR('example_payment', 'skyblue')">
+                            <i class="fa fa-credit-card"></i>
+                        </button>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享这一刻</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">让朋友们也来瞅瞅！</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+                    <button class="kr-share-platform-button" style="color: #62b6e7;" title="喵窝" onclick="krShareModalOpenPlatform('https://nya.one/share?text=%3E%20$TITLE%0A%3E%0A%3E%20$SUMMARY%0A----%20$SITE%0A%0A$URL')">
+                        <svg fill="currentColor" width="18" height="18" viewBox="0 0 329 388"><path d="M0,36.226c0,-19.993 16.233,-36.226 36.226,-36.226c13.788,0 25.787,7.719 31.908,19.068l188.366,229.845l0,-111.259c-6.356,5.508 -14.645,8.843 -23.707,8.843c-19.994,0 -36.226,-16.232 -36.226,-36.226c-0,-8.551 2.968,-16.413 7.93,-22.613l-0.015,-0.013l56.614,-69.08c6.2,-11.073 18.047,-18.565 31.63,-18.565c19.994,0 36.227,16.233 36.227,36.226l-0,314.644c-0,19.994 -16.233,36.226 -36.227,36.226c-13.166,0 -24.701,-7.039 -31.044,-17.555l-189.229,-230.899l-0,212.228c-0,19.994 -16.233,36.226 -36.227,36.226c-19.993,0 -36.226,-16.232 -36.226,-36.226l0,-314.644Z" /></svg>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+    <div id="aplayer"></div>
+<meting-js server="netease" type="playlist" id="60198" fixed="true"></meting-js>
+
+
+
+        <script>
     if (!window.kr) {
         window.kr = {};
     }
@@ -554,32 +642,26 @@ SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，�
 </script>
 
 
-    <script async src="/js/candy.min.js"></script>
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 
 
 
-    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    
-    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
-    <meting-js
-        server="netease"
-        type="playlist"
-        id="2024502984"
-        order="default"
-        fixed="true"
-    >
-    </meting-js>
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
 
 
-
-    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-<script defer src="/js/kratosr.min.js"></script>
-<script defer src="/js/pjax.min.js"></script>
+<script defer src="/js/kr-core.min.js"></script>
 
 
+  <script defer src="/js/kr-pjax.min.js"></script>
 
-<!-- Extra support for third-party plguins  -->
+
+<!-- 额外的追加注入项 -->
+
+  <script defer type="module" src="/comments/waline.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="/widgets/aplayer.js"></script>
+<script src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+
 
 
     </body>
