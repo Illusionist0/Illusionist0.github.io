@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+    <link rel="icon" href="/assets/logo.jpg">
+  
+  
+  <title>【Supabase】一个开源的BaaS平台 | zennon&#39;s blog</title>
+  <link rel="canonical" href="https://illusionist0.github.io/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/">
+  <meta name="author" content="Zennon" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="supabase" />
+  
+  <meta name="description" content="Supabase‌是一个开源的Firebase替代品，属于后端即服务（BaaS）平台。它允许开发者快速构建和部署应用程序，而无需担心底层基础设施的复杂性。 主要特点包括：  ‌数据库服务‌：Supabase使用PostgreSQL作为数据库，支持SQL和RESTful API访问。这使得开发者可以方便地进行数据库操作，如增删改查（CRUD）操作‌。 ‌身份验证服务‌：Supabase提供了一个完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Supabase】一个开源的BaaS平台">
+<meta property="og:url" content="https://illusionist0.github.io/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/index.html">
+<meta property="og:site_name" content="zennon&#39;s blog">
+<meta property="og:description" content="Supabase‌是一个开源的Firebase替代品，属于后端即服务（BaaS）平台。它允许开发者快速构建和部署应用程序，而无需担心底层基础设施的复杂性。 主要特点包括：  ‌数据库服务‌：Supabase使用PostgreSQL作为数据库，支持SQL和RESTful API访问。这使得开发者可以方便地进行数据库操作，如增删改查（CRUD）操作‌。 ‌身份验证服务‌：Supabase提供了一个完">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://illusionist0.github.io/Users/mac/Pictures/image.png">
+<meta property="og:image" content="https://alist.zennon.top/d/image/image-20241211172541617.png?sign=b7otaG5ZGx5pUNzXDYKAFcuOa79rX5c6xgIV0-J0vgk=:0">
+<meta property="article:published_time" content="2024-11-27T05:46:29.000Z">
+<meta property="article:modified_time" content="2024-12-11T09:27:13.135Z">
+<meta property="article:author" content="Zennon">
+<meta property="article:tag" content="supabase">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illusionist0.github.io/Users/mac/Pictures/image.png">
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
+  
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
+  
+  
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  
+  <!-- 自定义站点横幅和背景 -->
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner.webp');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner_dark.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+      }
+    
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
+  </style>
+
+  <!-- 额外的追加注入项 -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<link rel="stylesheet" href="/comments/waline.css" />
+<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+<link rel="stylesheet" href="/widgets/aplayer.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    <li>
+                                        
+                                            <a href="/">
+                                        
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a>
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            链接
+                                        </a>
+                                        
+                                            <ul class="sub-menu">
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                            
+                                                                <i class="fa fa-code"></i>
+                                                            
+                                                            代码仓库
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://wiki.krt.moe">
+                                                            
+                                                                <i class="fa fa-book"></i>
+                                                            
+                                                            项目文档
+                                                        </a>
+                                                    </li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">zennon&#39;s blog</a></div>
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>zennon&#39;s blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+                <h1 class="kratos-page-title text-center" itemprop="name headline">【Supabase】一个开源的BaaS平台</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2024-11-27T05:46:29.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-11-27</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~8.39K
+                        
+                        字
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-eye"></i>
+                        <span data-path="/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/" class="waline-pageview-count"> </span> 次阅读
+                    </li>
+                
+                
+                    <li>
+                        <i class="fa fa-commenting-o"></i>
+                        <span data-path="/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/" class="waline-comment-count"> </span> 条评论
+                    </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><p>Supabase‌是一个开源的<a target="_blank" rel="noopener" href="https://www.baidu.com/s?rsv_dl=re_dqa_generate&sa=re_dqa_generate&wd=Firebase&rsv_pq=84c5044b002050ca&oq=supabase&rsv_t=84a4xcWjp9a86iqX2ItSwKURK4Ie39iQy4uyYsF5hRZ5dOk5BjY9V6DH703k3YOe/YxZLw&tn=68018901_3_dg&ie=utf-8">Firebase</a>替代品，属于后端即服务（BaaS）平台。它允许开发者快速构建和部署应用程序，而无需担心底层基础设施的复杂性。</p>
+<p>主要特点包括：</p>
+<ol>
+<li>‌<strong>数据库服务</strong>‌：Supabase使用<a target="_blank" rel="noopener" href="https://www.baidu.com/s?rsv_dl=re_dqa_generate&sa=re_dqa_generate&wd=PostgreSQL&rsv_pq=84c5044b002050ca&oq=supabase&rsv_t=84a4xcWjp9a86iqX2ItSwKURK4Ie39iQy4uyYsF5hRZ5dOk5BjY9V6DH703k3YOe/YxZLw&tn=68018901_3_dg&ie=utf-8">PostgreSQL</a>作为数据库，支持SQL和RESTful API访问。这使得开发者可以方便地进行数据库操作，如增删改查（CRUD）操作‌。</li>
+<li>‌<strong>身份验证服务</strong>‌：Supabase提供了一个完整的认证系统，支持邮箱、手机号、第三方服务等多种登录方式，方便用户管理和验证‌。</li>
+<li>‌<strong>实时订阅功能</strong>‌：通过WebSocket，Supabase允许实现实时数据同步，无需编写额外的代码，简化了实时数据交互的复杂性‌。</li>
+<li>‌<strong>对象存储服务</strong>‌：Supabase提供了一个对象存储服务，可以方便地上传、下载和管理文件，适用于需要存储大量数据的场景‌。</li>
+<li>‌<strong>边缘函数</strong>‌：支持在边缘节点上运行JavaScript函数，用于处理请求或触发事件，增强了平台的灵活性和功能‌。</li>
+</ol>
+<h2 id="Supabase本地部署"><a href="#Supabase本地部署" class="headerlink" title="Supabase本地部署"></a>Supabase本地部署</h2><h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h3><p>supabase外网部署由于服务器在国外无法访问，或者访问时间过长导致超时，因此可以采用本地<strong>docker</strong>部署的方式来实施。</p>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#installing-and-running-supabase">Docker自托管</a></p>
+<h3 id="1-安装前准备"><a href="#1-安装前准备" class="headerlink" title="1.安装前准备"></a>1.安装前准备</h3><p>安装Git and Docker</p>
+<h3 id="2-安装和运行Supabase"><a href="#2-安装和运行Supabase" class="headerlink" title="2.安装和运行Supabase #"></a>2.安装和运行Supabase <a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#installing-and-running-supabase">#</a></h3><p>请按照以下步骤在您的机器上（自有服务器上）启动 Supabase：</p>
+<ul>
+<li>常规</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get the code</span></span><br><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/supabase/supabase</span><br><span class="line"></span><br><span class="line"><span class="comment"># Go to the docker folder</span></span><br><span class="line"><span class="built_in">cd</span> supabase/docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy the fake env vars</span></span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pull the latest images</span></span><br><span class="line">docker compose pull</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start the services (in detached mode)</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>深度</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get the code using git sparse checkout</span></span><br><span class="line">git <span class="built_in">clone</span> --filter=blob:none --no-checkout https://github.com/supabase/supabase</span><br><span class="line"><span class="built_in">cd</span> supabase</span><br><span class="line">git sparse-checkout <span class="built_in">set</span> --cone docker &amp;&amp; git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># Go to the docker folder</span></span><br><span class="line"><span class="built_in">cd</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy the fake env vars</span></span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pull the latest images</span></span><br><span class="line">docker compose pull</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start the services (in detached mode)</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>如果您使用的是无根 docker，请编辑并设置为您的 docker  socket套接字位置。例如：。否则，您将看到类似 .<code>.env``DOCKER_SOCKET_LOCATION``/run/user/1000/docker.sock``container supabase-vector exited (0)</code></p>
+<p>在所有服务启动后，您可以看到它们在后台运行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>所有服务都应具有状态 。如果您看到类似 but not 的状态，请尝试使用 手动启动该服务。<code>running (healthy)``created``running``docker compose start &lt;service-name&gt;</code></p>
+<h3 id="3-访问服务"><a href="#3-访问服务" class="headerlink" title="3.访问服务"></a>3.访问服务</h3><h4 id="访问Supabase-Studio"><a href="#访问Supabase-Studio" class="headerlink" title="访问Supabase Studio #"></a>访问Supabase Studio <a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#accessing-supabase-studio">#</a></h4><p>您可以通过 port 上的 API 网关访问 Supabase Studio。例如：、或<code>8000``http://&lt;your-ip&gt;:8000</code><a target="_blank" rel="noopener" href="http://localhost:8000/">本地主机：8000</a>如果您在本地运行 Docker。</p>
+<p>系统将提示您输入用户名和密码。默认情况下，凭证为：</p>
+<ul>
+<li>用户名：<code>supabase</code></li>
+<li>密码：<code>this_password_is_insecure_and_should_be_updated</code></li>
+</ul>
+<h4 id="访问-API"><a href="#访问-API" class="headerlink" title="访问 API #"></a>访问 API <a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#accessing-the-apis">#</a></h4><p>每个 API 都可以通过同一个 API 网关获得：</p>
+<ul>
+<li>Rest：<code>http://&lt;your-ip&gt;:8000/rest/v1/</code></li>
+<li>Auth：<code>http://&lt;your-domain&gt;:8000/auth/v1/</code></li>
+<li>Storage：<code>http://&lt;your-domain&gt;:8000/storage/v1/</code></li>
+<li>Realtime：<code>http://&lt;your-domain&gt;:8000/realtime/v1/</code></li>
+</ul>
+<h4 id="访问您的-Edge-Functions"><a href="#访问您的-Edge-Functions" class="headerlink" title="访问您的 Edge Functions#"></a>访问您的 Edge Functions<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#accessing-your-edge-functions">#</a></h4><p>Edge Functions 存储在 中。默认设置具有可在 上调用的函数 。<code>volumes/functions``hello``http://&lt;your-domain&gt;:8000/functions/v1/hello</code></p>
+<p>您可以将新函数添加为 。重新启动服务以获取更改：<code>volumes/functions/&lt;FUNCTION_NAME&gt;/index.ts``functions``docker compose restart functions --no-deps</code></p>
+<h4 id="访问-Postgres"><a href="#访问-Postgres" class="headerlink" title="访问 Postgres#"></a>访问 Postgres<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#accessing-postgres">#</a></h4><p>默认情况下，Supabase 堆栈运行<a target="_blank" rel="noopener" href="https://supabase.github.io/supavisor/development/docs/">Supavisor</a> Connection Pooler 的 Pooler 中。Supavisor 提供对数据库连接的高效管理。</p>
+<p>您可以使用以下方法连接到 Postgres 数据库：</p>
+<p>​	对于基于会话的连接（相当于直接 PostgreSQL 连接）：</p>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql <span class="string">&#x27;postgres://postgres.your-tenant-id:your-super-secret-and-long-postgres-password@localhost:5432/postgres&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>​	对于共用事务连接：</p>
+<figure class="highlight postgresql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql <span class="string">&#x27;postgres://postgres.your-tenant-id:your-super-secret-and-long-postgres-password@localhost:6543/postgres&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>默认租户 ID 为 ，默认密码为 。您应该尽快使用<code>your-tenant-id``your-super-secret-and-long-postgres-password</code><a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#update-secrets">说明如下</a>.</p>
+<p>默认情况下，无法从本地计算机外部访问数据库，但可以从池程序访问。您可以<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#exposing-your-postgres-database">更改此项</a>通过更新文件。<code>docker-compose.yml</code></p>
+<h3 id="4-更新服务"><a href="#4-更新服务" class="headerlink" title="4.更新服务#"></a>4.更新服务<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#updating-your-services">#</a></h3><p>出于安全原因，我们在 docker-compose 文件中“固定”每个服务的版本（这些版本~每月更新一次）。如果要立即更新任何服务，可以通过更新 docker compose 文件中的版本号，然后运行 来实现。您可以在<code>docker compose pull</code><a target="_blank" rel="noopener" href="https://hub.docker.com/u/supabase">Supabase Docker 中心</a>.</p>
+<p>您应该经常更新您的服务，以获取最新的功能、错误修复和安全补丁。请注意，您需要重新启动服务才能获取更改，这将导致您的服务出现一些停机时间。</p>
+<p>您需要经常更新 Studio（控制面板） 以获取最新功能和错误修复。要更新 Dashboard：</p>
+<ol>
+<li>访问<a target="_blank" rel="noopener" href="https://hub.docker.com/r/supabase/studio/tags">Supabase&#x2F;工作室</a>图像中的<a target="_blank" rel="noopener" href="https://hub.docker.com/u/supabase">Supabase Docker 中心</a></li>
+<li>查找最新版本（标签）号。它看起来像<code>20241029-46e1e40</code></li>
+<li>将文件中的字段更新为新版本。它应该看起来像这样：<code>image``docker-compose.yml``image: supabase/studio:20241028-a265374</code></li>
+<li>运行 ，然后使用新版本重新启动服务。<code>docker compose pull``docker compose up -d</code></li>
+</ol>
+<h3 id="5-保护您的服务"><a href="#5-保护您的服务" class="headerlink" title="5.保护您的服务#"></a>5.保护您的服务<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#securing-your-services">#</a></h3><p>虽然我们为您提供了一些入门示例密钥，但您永远不应该使用我们提供的默认值来部署您的 Supabase 设置。请按照本节中的所有步骤操作，以确保您的设置安全，然后<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#restarting-all-services">重启所有服务</a>以获取更改。</p>
+<h4 id="生成-API-密钥"><a href="#生成-API-密钥" class="headerlink" title="生成 API 密钥#"></a>生成 API 密钥<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#generate-api-keys">#</a></h4><p>我们需要生成安全密钥来访问您的服务。我们将使用下面的表单生成 API 密钥。<code>JWT Secret``anon``service</code></p>
+<ol>
+<li><strong>获取密钥</strong>：使用提供的 40 个字符的密钥，或创建自己的密钥。如果要创建，请确保它是一个 40 个字符的强随机字符串。</li>
+<li><strong>安全存储</strong>：将密钥保存在本地计算机上的安全位置。不要公开分享此密钥或将其提交到版本控制。</li>
+<li><strong>生成 JWT</strong>：使用下面的表单使用您的密钥生成新的 JWT。<code>JWT</code></li>
+</ol>
+<p>JWT 将根据此信息生成<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#updating-your-services">🔗表单生成器🔗</a>生成 JWT</p>
+<h4 id="更新-API-密钥"><a href="#更新-API-密钥" class="headerlink" title="更新 API 密钥#"></a>更新 API 密钥<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#update-api-keys">#</a></h4><p>运行此表单两次以生成 new 和 API 密钥。替换文件中的值：<code>anon``service``./docker/.env</code></p>
+<ul>
+<li><code>ANON_KEY</code>- 替换为 key<code>anon</code></li>
+<li><code>SERVICE_ROLE_KEY</code>- 替换为key<code>service</code></li>
+</ul>
+<p>您将需要<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#restarting-all-services">重新启动</a>使更改生效的服务。</p>
+<h4 id="更新密钥"><a href="#更新密钥" class="headerlink" title="更新密钥#"></a>更新密钥<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#update-secrets">#</a></h4><p>使用您自己的密钥更新文件。具体而言，这些是必需的：<code>./docker/.env</code></p>
+<ul>
+<li><code>POSTGRES_PASSWORD</code>：角色的密码。<code>postgres</code></li>
+<li><code>JWT_SECRET</code>：由 PostgREST 和 GoTrue 等使用。</li>
+<li><code>SITE_URL</code>：您站点的基本 URL。</li>
+<li><code>SMTP_*</code>：邮件服务器凭据。您可以使用任何 SMTP 服务器。</li>
+<li><code>POOLER_TENANT_ID</code>：Supivisor Pooler 将用于连接字符串的租户 ID</li>
+</ul>
+<p>您将需要<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#restarting-all-services">重新启动</a>使更改生效的服务。</p>
+<h4 id="控制面板身份验证"><a href="#控制面板身份验证" class="headerlink" title="控制面板身份验证#"></a>控制面板身份验证<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#dashboard-authentication">#</a></h4><p>Dashboard 受基本身份验证保护。在生产环境中使用 Supabase 之前，必须更新默认用户和密码。 更新文件中的以下值：<code>./docker/.env</code></p>
+<ul>
+<li><code>DASHBOARD_USERNAME</code>：Dashboard 的默认用户名</li>
+<li><code>DASHBOARD_PASSWORD</code>：Dashboard 的默认密码</li>
+</ul>
+<p>您还可以在 中为多个用户添加更多凭据。例如：<code>./docker/volumes/api/kong.yml</code></p>
+<p>docker&#x2F;volumes&#x2F;api&#x2F;kong.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">basicauth_credentials:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">consumer:</span> <span class="string">DASHBOARD</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">user_one</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">password_one</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">consumer:</span> <span class="string">DASHBOARD</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">user_two</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">password_two</span></span><br></pre></td></tr></table></figure>
+
+<p>您将需要<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#restarting-all-services">重新启动</a>使更改生效的服务。</p>
+<h4 id="重新启动所有服务"><a href="#重新启动所有服务" class="headerlink" title="重新启动所有服务#"></a>重新启动所有服务<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#restarting-all-services">#</a></h4><p>您可以通过运行以下命令重新启动服务以获取任何配置更改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Stop and remove the containers</span></span><br><span class="line">docker compose down</span><br><span class="line"></span><br><span class="line"><span class="comment"># Recreate and start the containers</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+
+
+<p>请注意，这将导致停机。仅重新启动服务不会应用配置更改。</p>
+<h4 id="停止所有服务"><a href="#停止所有服务" class="headerlink" title="停止所有服务#"></a>停止所有服务<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#stopping-all-services">#</a></h4><p>您可以通过在与文件相同的目录中运行来停止 Supabase。<code>docker compose stop``docker-compose.yml</code></p>
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载#"></a>卸载<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#uninstalling">#</a></h4><p>您可以通过在文件所在的目录中运行以下命令来停止 Supabase：<code>docker-compose.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"></span><br><span class="line"># Stop docker and remove volumes:</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">docker compose down -v</span><br><span class="line">3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4</span><br><span class="line"></span><br><span class="line"># Remove Postgres data:</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">rm -rf volumes/db/data/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这将破坏数据库和存储卷中的所有数据，因此请小心！</p>
+<h3 id="管理您的密钥"><a href="#管理您的密钥" class="headerlink" title="管理您的密钥#"></a>管理您的密钥<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#managing-your-secrets">#</a></h3><p>Supabase 中的许多组件都使用安全的密钥和密码。这些列在自托管<a target="_blank" rel="noopener" href="https://github.com/supabase/supabase/blob/master/docker/.env.example">env 文件</a>，但我们强烈建议在部署到生产环境时使用 Secrets Manager。像 dotenv 这样的纯文本文件会导致意外的、代价高昂的泄漏。</p>
+<p>一些建议的系统包括：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.doppler.com/">Doppler</a></li>
+<li><a target="_blank" rel="noopener" href="https://infisical.com/">Infisical</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/key-vault/general/overview">Key Vault</a> by Azure (Microsoft)</li>
+<li><a target="_blank" rel="noopener" href="https://aws.amazon.com/secrets-manager/">Secrets Manager</a> by AWS</li>
+<li><a target="_blank" rel="noopener" href="https://cloud.google.com/secret-manager">Secrets Manager</a> by GCP</li>
+<li><a target="_blank" rel="noopener" href="https://www.hashicorp.com/products/vault">Vault</a> by Hashicorp</li>
+</ul>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构#"></a>架构<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#architecture">#</a></h3><p>Supabase 是开源工具的组合，每个工具都是为企业就绪而选择的。</p>
+<p>如果工具和社区已经存在，并且具有 MIT、Apache 2 或等效的开放许可证，我们将使用并支持该工具。 如果该工具不存在，我们自己构建并开源它。</p>
+<p><img src="/Users/mac/Pictures/image.png" alt="Diagram showing the architecture of Supabase. The Kong API gateway sits in front of 7 services: GoTrue, PostgREST, Realtime, Storage, pg_meta, Functions, and pg_graphql. All the services talk to a single Postgres instance."></p>
+<p><img src="https://alist.zennon.top/d/image/image-20241211172541617.png?sign=b7otaG5ZGx5pUNzXDYKAFcuOa79rX5c6xgIV0-J0vgk=:0" alt="Diagram showing the architecture of Supabase. The Kong API gateway sits in front of 7 services: GoTrue, PostgREST, Realtime, Storage, pg_meta, Functions, and pg_graphql. All the services talk to a single Postgres instance."></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Kong/kong">Kong</a>是云原生 API 网关。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/gotrue">GoTrue 的</a>是基于 JWT 的 API，用于管理用户和颁发 JWT 令牌。</li>
+<li><a target="_blank" rel="noopener" href="http://postgrest.org/">postgREST</a>是一个 Web 服务器，可将 PostgreSQL 数据库直接转换为 RESTful API</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/realtime">Realtime</a>是一个 Elixir 服务器，允许您使用 websockets 监听 PostgreSQL 的插入、更新和删除。实时轮询 Postgres 的内置复制功能以查找数据库更改，将更改转换为 JSON，然后通过 Websockets 将 JSON 广播到授权客户端。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/storage-api">storage</a>提供 RESTful 接口，用于管理存储在 S3 中的文件，使用 Postgres 管理权限。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/postgres-meta">postgres-meta</a>是一个 RESTful API，用于管理您的 Postgres，允许您获取表、添加角色和运行查询等。</li>
+<li><a target="_blank" rel="noopener" href="https://www.postgresql.org/">PostgreSQL 数据库</a>是一个对象关系数据库系统，经过 30 多年的积极开发，在可靠性、功能健壮性和性能方面赢得了良好的声誉。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/supavisor">Supavisor</a>是 Postgres 的可扩展连接池程序，允许高效管理数据库连接。</li>
+</ul>
+<p>为了使系统协同工作，某些服务需要在 Postgres 数据库中进行其他配置。例如，API 和 Auth 系统需要多个<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/database/postgres/roles">默认角色</a>和 Postgres 扩展。<code>pgjwt</code></p>
+<p>您可以在<a target="_blank" rel="noopener" href="https://github.com/supabase/postgres/tree/develop/migrations">架构迁移脚本存储库</a>.这些脚本被挂载为在启动数据库容器时自动运行。<code>/docker-entrypoint-initdb.d</code></p>
+<h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务#"></a>配置服务<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#configuring-services">#</a></h3><p>每个系统都有许多配置选项，这些选项可以在相关产品文档中找到。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/postgres/">Postgres</a></li>
+<li><a target="_blank" rel="noopener" href="https://postgrest.org/en/stable/configuration.html">postgREST</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/realtime#server">realtime</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/auth">Auth</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/supabase/storage-api">Storage</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.konghq.com/gateway/latest/install/docker/">Kong</a></li>
+<li><a target="_blank" rel="noopener" href="https://supabase.github.io/supavisor/development/docs/">Supavisor</a></li>
+</ul>
+<p>这些配置项通常会添加到每个服务的 section 中。如果这些配置项是敏感的，则应将它们存储在<code>env``docker-compose.yml</code><a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting#managing-your-secrets">密钥管理器</a>或使用文件，然后使用语法引用。<code>.env``$&#123;&#125;</code></p>
+<p>docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line"> <span class="attr">rest:</span></span><br><span class="line">   <span class="attr">image:</span> <span class="string">postgrest/postgrest</span></span><br><span class="line">   <span class="attr">environment:</span></span><br><span class="line">     <span class="attr">PGRST_JWT_SECRET:</span> <span class="string">$&#123;JWT_SECRET&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>.env</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Never check your secrets into version control</span></span><br><span class="line"><span class="attr">`$&#123;JWT_SECRET&#125;`</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="通用配置"><a href="#通用配置" class="headerlink" title="通用配置#"></a>通用配置<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#common-configuration">#</a></h3><p>每个系统都可以独立<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting#configuration">配置</a>。下面列出了一些最常见的配置选项。</p>
+<h4 id="配置电子邮件服务器"><a href="#配置电子邮件服务器" class="headerlink" title="配置电子邮件服务器#"></a>配置电子邮件服务器<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#configuring-an-email-server">#</a></h4><p>您需要使用生产就绪型 SMTP 服务器来发送电子邮件。您可以通过更新以下环境变量来配置 SMTP 服务器：</p>
+<p>.env</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">SMTP_ADMIN_EMAIL</span>=<span class="string"></span></span><br><span class="line"><span class="attr">SMTP_HOST</span>=<span class="string"></span></span><br><span class="line"><span class="attr">SMTP_PORT</span>=<span class="string"></span></span><br><span class="line"><span class="attr">SMTP_USER</span>=<span class="string"></span></span><br><span class="line"><span class="attr">SMTP_PASS</span>=<span class="string"></span></span><br><span class="line"><span class="attr">SMTP_SENDER_NAME</span>=<span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>我们建议使用<a target="_blank" rel="noopener" href="https://aws.amazon.com/ses/">AWS SES</a>.它非常便宜且可靠。重新启动所有服务以获取新配置。</p>
+<h4 id="配置-S3-存储"><a href="#配置-S3-存储" class="headerlink" title="配置 S3 存储#"></a>配置 S3 存储<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#configuring-s3-storage">#</a></h4><p>默认情况下，所有文件都存储在本地服务器上。您可以通过更新以下环境变量将 Storage 服务配置为使用 S3：</p>
+<p>docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">storage:</span></span><br><span class="line">  <span class="attr">environment:</span></span><br><span class="line">    <span class="string">STORAGE_BACKEND=s3</span></span><br><span class="line">    <span class="string">GLOBAL_S3_BUCKET=name-of-your-s3-bucket</span></span><br><span class="line">    <span class="string">REGION=region-of-your-s3-bucket</span></span><br></pre></td></tr></table></figure>
+
+<p>您可以在<a target="_blank" rel="noopener" href="https://github.com/supabase/storage-api/blob/master/.env.sample">存储库</a>.重新启动服务以获取更改：<code>storage``docker compose restart storage --no-deps</code></p>
+<h4 id="设置数据库的log-min-messages"><a href="#设置数据库的log-min-messages" class="headerlink" title="设置数据库的log_min_messages#"></a>设置数据库的<code>log_min_messages</code><a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#setting-databases-logminmessages">#</a></h4><p>默认情况下，将数据库的配置设置为以防止 Realtime 生成冗余日志。您可以使用任何 Postgres 进行配置<code>docker compose``log_min_messages``fatal``log_min_messages</code><a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-SEVERITY-LEVELS">严重性级别</a>.</p>
+<h4 id="通过-Supavisor-访问-Postgres"><a href="#通过-Supavisor-访问-Postgres" class="headerlink" title="通过 Supavisor 访问 Postgres#"></a>通过 Supavisor 访问 Postgres<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#accessing-postgres-through-supavisor">#</a></h4><p>默认情况下，Postgres 数据库可通过 Supavisor 连接池程序访问。这允许更高效地管理数据库连接。您可以使用端口连接到池化数据库，也可以连接到基于会话的连接。<code>POOLER_PROXY_PORT_TRANSACTION``POSTGRES_PORT</code></p>
+<p>有关配置和使用 Supavisor 的更多信息，请参阅<a target="_blank" rel="noopener" href="https://supabase.github.io/supavisor/">Supavisor 文档</a>.</p>
+<h4 id="公开-Postgres-数据库"><a href="#公开-Postgres-数据库" class="headerlink" title="公开 Postgres 数据库#"></a>公开 Postgres 数据库<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#exposing-your-postgres-database">#</a></h4><p>如果您需要直接访问 Postgres 数据库而无需通过 Supavisor，您可以通过更新文件来公开它：<code>docker-compose.yml</code></p>
+<p>docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comment or remove the supavisor section of the docker-compose file</span></span><br><span class="line"><span class="comment">#  supavisor:</span></span><br><span class="line"><span class="comment">#    ports:</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">$&#123;POSTGRES_PORT&#125;:$&#123;POSTGRES_PORT&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这不太安全，因此请确保您在服务器前面运行防火墙。</p>
+<h4 id="macOS-上的文件存储后端"><a href="#macOS-上的文件存储后端" class="headerlink" title="macOS 上的文件存储后端#"></a>macOS 上的文件存储后端<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#file-storage-backend-on-macos">#</a></h4><p>默认情况下，Storage backend 设置为 ，即使用本地文件作为存储后端。为了兼容 macOS，您需要选择作为 Docker 容器文件共享实现（在 Docker Desktop &gt; Preferences -&gt; General）。<code>file``VirtioFS</code></p>
+<h4 id="使用-Analytics-服务器设置日志记录"><a href="#使用-Analytics-服务器设置日志记录" class="headerlink" title="使用 Analytics 服务器设置日志记录#"></a>使用 Analytics 服务器设置日志记录<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#setting-up-logging-with-the-analytics-server">#</a></h4><p>自托管 Analytics 服务器需要其他配置。有关完整的设置说明，请参阅<a target="_blank" rel="noopener" href="https://supabase.com/docs/reference/self-hosting-analytics/introduction#getting-started">自托管分析</a>.</p>
+<h3 id="升级-Analytics"><a href="#升级-Analytics" class="headerlink" title="升级 Analytics#"></a>升级 Analytics<a target="_blank" rel="noopener" href="https://supabase.com/docs/guides/self-hosting/docker#upgrading-analytics">#</a></h3><p>由于 Analytics 服务器中的更改，您将需要运行以下命令来升级 Analytics 服务器：</p>
+<p>当您运行以下命令时，Analytics 中的所有数据都将被删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Destroy analytics to transition to postgres self hosted solution without other data loss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enter the container and use your .env POSTGRES_PASSWORD value to login</span></span><br><span class="line">docker <span class="built_in">exec</span> -it $(docker ps | grep supabase-db | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>) psql -U supabase_admin --password</span><br><span class="line"><span class="comment"># Drop all the data in the _analytics schema</span></span><br><span class="line">DROP PUBLICATION logflare_pub; DROP SCHEMA _analytics CASCADE; CREATE SCHEMA _analytics;\q</span><br><span class="line"><span class="comment"># Drop the analytics container</span></span><br><span class="line">docker <span class="built_in">rm</span> supabase-analytics</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/supabase/" rel="tag">supabase</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-12-11T09:27:13.135Z" itemprop="dateModified">最后编辑：2024-12-11</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【hexo】图床的搭建和使用" href="/2024/11/27/【hexo】图床的搭建和使用/"><i class="fa fa-angle-left"></i> 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 【hexo】免费SSL证书的申请" href="/2024/11/28/【hexo】免费SSL证书的申请/">下一篇 <i class="fa fa-angle-right"></i></a>
+            </div>
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            <div id="w-comments" class="kr-comments" data-path="/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/"></div>
+        </div>
+    
+</article>
+
+        
+
+            </section>
+
+            
+                
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/assets/avatar.jpg" alt="Zennon" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                20
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                2
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类列表</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/supabase/">supabase</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web3/">web3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AF%AD/">日语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">每日随笔</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">设计随笔</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97%E6%AD%8C%E9%9B%86/">诗歌集</a><span class="category-list-count">3</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/supabase/" style="font-size: 0.6em;">supabase</a> <a href="/tags/%E5%A4%96%E8%AF%AD%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%97%A5%E8%AF%AD/" style="font-size: 0.6em;">外语学习，日语</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"><i class="fa fa-book"></i> 【Web3】Trading View</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/06/%E3%80%90%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94%E3%80%91%E5%A4%A7%E9%9B%AA/"><i class="fa fa-book"></i> 【每日随笔】大雪</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/12/01/%E3%80%90web3%E3%80%91%E5%88%9B%E7%AB%8B%E4%B8%80%E4%B8%AAWeb3-Bank-Simplified/"><i class="fa fa-book"></i> 【web3】创立一个Web3 Bank/Simplified</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/11/28/%E3%80%90hexo%E3%80%91%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%9A%84%E7%94%B3%E8%AF%B7/"><i class="fa fa-book"></i> 【hexo】免费SSL证书的申请</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/11/27/%E3%80%90Supabase%E3%80%91%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E7%9A%84BaaS%E5%B9%B3%E5%8F%B0/"><i class="fa fa-book"></i> 【Supabase】一个开源的BaaS平台</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+            
+
+        
+
+                </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                            <li>
+                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 zennon's blog 版权所有.</li>
+                            <li>本站已在风雨中飘摇<span id="kr-since">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">Zennon</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
+                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                                    <li>您是本站的第 <span data-path="/index.html" class="waline-pageview-count"></span> 位访客</li>
+                                
+                                    <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">工信部备案号</a></li>
+                                
+                                    <li><a href="http://www.beian.gov.cn" rel="external nofollow" target="_blank"><img src="https://www.unpkg.com/hexo-theme-kratos-rebirth@2.2.0/source/images/psr.webp" width="12" height="12" loading="lazy" decoding="auto" />公安备案号</a></li>
+                                
+                            </div>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
+            </div>
+            <div id="gotop-box" class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">赞助喵</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">非常感谢您的喜欢！ <i class="fa fa-heart" style="color:#d43f57"></i></div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+                    <img class="kr-donate-placeholder" src="https://dev.krt.moe/demo-assets/donate.webp" alt="赞助喵" />
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
+                    
+                        <button class="kr-donate-platform-button" style="color: skyblue;" title="模拟支付" onclick="krDonateModalShowPlatformQR('example_payment', 'skyblue')">
+                            <i class="fa fa-credit-card"></i>
+                        </button>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享这一刻</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">让朋友们也来瞅瞅！</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+                    <button class="kr-share-platform-button" style="color: #62b6e7;" title="喵窝" onclick="krShareModalOpenPlatform('https://nya.one/share?text=%3E%20$TITLE%0A%3E%0A%3E%20$SUMMARY%0A----%20$SITE%0A%0A$URL')">
+                        <svg fill="currentColor" width="18" height="18" viewBox="0 0 329 388"><path d="M0,36.226c0,-19.993 16.233,-36.226 36.226,-36.226c13.788,0 25.787,7.719 31.908,19.068l188.366,229.845l0,-111.259c-6.356,5.508 -14.645,8.843 -23.707,8.843c-19.994,0 -36.226,-16.232 -36.226,-36.226c-0,-8.551 2.968,-16.413 7.93,-22.613l-0.015,-0.013l56.614,-69.08c6.2,-11.073 18.047,-18.565 31.63,-18.565c19.994,0 36.227,16.233 36.227,36.226l-0,314.644c-0,19.994 -16.233,36.226 -36.227,36.226c-13.166,0 -24.701,-7.039 -31.044,-17.555l-189.229,-230.899l-0,212.228c-0,19.994 -16.233,36.226 -36.227,36.226c-19.993,0 -36.226,-16.232 -36.226,-36.226l0,-314.644Z" /></svg>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+    <div id="aplayer"></div>
+<meting-js server="netease" type="playlist" id="60198" fixed="true"></meting-js>
+
+
+
+        <script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+
+
+
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
+
+
+<script defer src="/js/kr-core.min.js"></script>
+
+
+  <script defer src="/js/kr-pjax.min.js"></script>
+
+
+<!-- 额外的追加注入项 -->
+
+  <script defer type="module" src="/comments/waline.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="/widgets/aplayer.js"></script>
+<script src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+
+
+
+    </body>
+</html>
