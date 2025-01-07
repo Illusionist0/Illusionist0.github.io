@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/logo.jpg">
   
   
-  <title>【Web3】Trading View | zennon&#39;s blog</title>
-  <link rel="canonical" href="https://illusionist0.github.io/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/">
+  <title>【Nginx】Nginx基础 | zennon&#39;s blog</title>
+  <link rel="canonical" href="https://illusionist0.github.io/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/">
   <meta name="author" content="Zennon" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -19,17 +19,20 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="TradingView是一个强大的市场交易平台，提供全球各种金融市场的价格图表和分析工具，包括股票、货币对、债券、期货以及加密货币等。用户可以通过该平台查看实时行情、进行技术分析、发布和交流投资观点，并与其他交易者互动‌12。 主要功能和服务 ‌实时行情追踪‌：用户可以实时查看各种金融市场的价格变动，包括股票、货币对、期货等。 ‌技术分析工具‌：提供多种图表类型（如蜡烛图、线图）和技术指标（如移">
+  <meta name="description" content="0.引言 什么是Nginx？Nginx是一个高性能HTTP和反向代理服务器，特点是它占用的内存特别少，并发能力强，专门为性能优化而开发，能够经受高负载的考验，能支持高达五万个并发连接数。 正向代理与反向代理正向代理：如果把局域网外的Internet想象成为一个巨大的资源库，则局域网中的客户端（浏览器）要访问internet时，则需要通过代理服务器来访问，这种代理服务就称为正向代理。就比如我们访问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Web3】Trading View">
-<meta property="og:url" content="https://illusionist0.github.io/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/index.html">
+<meta property="og:title" content="【Nginx】Nginx基础">
+<meta property="og:url" content="https://illusionist0.github.io/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="zennon&#39;s blog">
-<meta property="og:description" content="TradingView是一个强大的市场交易平台，提供全球各种金融市场的价格图表和分析工具，包括股票、货币对、债券、期货以及加密货币等。用户可以通过该平台查看实时行情、进行技术分析、发布和交流投资观点，并与其他交易者互动‌12。 主要功能和服务 ‌实时行情追踪‌：用户可以实时查看各种金融市场的价格变动，包括股票、货币对、期货等。 ‌技术分析工具‌：提供多种图表类型（如蜡烛图、线图）和技术指标（如移">
+<meta property="og:description" content="0.引言 什么是Nginx？Nginx是一个高性能HTTP和反向代理服务器，特点是它占用的内存特别少，并发能力强，专门为性能优化而开发，能够经受高负载的考验，能支持高达五万个并发连接数。 正向代理与反向代理正向代理：如果把局域网外的Internet想象成为一个巨大的资源库，则局域网中的客户端（浏览器）要访问internet时，则需要通过代理服务器来访问，这种代理服务就称为正向代理。就比如我们访问">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-06T06:51:39.000Z">
-<meta property="article:modified_time" content="2024-12-06T07:05:40.617Z">
+<meta property="og:image" content="https://alist.zennon.top/d/image/nginx.png?sign=9ESUICi8DTmjnwUwizhmUXWc7IrSuOEW3H5RT3xQiC8=:0">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/03779549ebfc4cabb3b2a45e28f109c8.png">
+<meta property="article:published_time" content="2025-01-07T09:10:42.000Z">
+<meta property="article:modified_time" content="2025-01-07T10:39:41.655Z">
 <meta property="article:author" content="Zennon">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://alist.zennon.top/d/image/nginx.png?sign=9ESUICi8DTmjnwUwizhmUXWc7IrSuOEW3H5RT3xQiC8=:0">
   
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
@@ -200,14 +203,14 @@
         
 
             <article itemscope itemtype="https://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/">
+    <link itemprop="mainEntityOfPage" href="https://illusionist0.github.io/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/">
     <div class="kratos-hentry kratos-page-inner clearfix">
         <header class="kratos-page-header">
             
-                <h1 class="kratos-page-title text-center" itemprop="name headline">【Web3】Trading View</h1>
+                <h1 class="kratos-page-title text-center" itemprop="name headline">【Nginx】Nginx基础</h1>
             
             <ul class="kratos-page-meta text-center">
-                <li><time datetime="2024-12-06T06:51:39.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-12-06</time></li>
+                <li><time datetime="2025-01-07T09:10:42.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-01-07</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">Zennon</span>
                 </li>
@@ -216,7 +219,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            643
+                            ~2.31K
                         
                         字
                     </li>
@@ -224,13 +227,13 @@
                 
                     <li>
                         <i class="fa fa-eye"></i>
-                        <span data-path="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/" class="waline-pageview-count"> </span> 次阅读
+                        <span data-path="/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/" class="waline-pageview-count"> </span> 次阅读
                     </li>
                 
                 
                     <li>
                         <i class="fa fa-commenting-o"></i>
-                        <span data-path="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/" class="waline-comment-count"> </span> 条评论
+                        <span data-path="/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/" class="waline-comment-count"> </span> 条评论
                     </li>
                 
             </ul>
@@ -240,23 +243,79 @@
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">主要功能和服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">使用方法和设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%AF%84%E4%BB%B7%E5%92%8C%E7%A4%BE%E5%8C%BA%E5%8F%8D%E9%A6%88"><span class="toc-number">3.</span> <span class="toc-text">用户评价和社区反馈</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#0-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">0.引言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNginx%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">什么是Nginx？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">1.0.2.</span> <span class="toc-text">正向代理与反向代理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">负载均衡</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB"><span class="toc-number">1.0.4.</span> <span class="toc-text">动静分离</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.0.5.</span> <span class="toc-text">优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Nginx%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">1.Nginx安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Nginx%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">2.Nginx配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E2%80%94%E2%80%94%E5%85%A8%E5%B1%80%E5%9D%97"><span class="toc-number">3.0.1.</span> <span class="toc-text">第一部分——全局块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%E2%80%94%E2%80%94events%E5%9D%97"><span class="toc-number">3.0.2.</span> <span class="toc-text">第二部分——events块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%E2%80%94%E2%80%94http%E5%9D%97"><span class="toc-number">3.0.3.</span> <span class="toc-text">第三部分——http块</span></a></li></ol></li></ol></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><p><strong>TradingView</strong>是一个强大的市场交易平台，提供全球各种金融市场的价格图表和分析工具，包括股票、货币对、债券、期货以及加密货币等。用户可以通过该平台查看实时行情、进行技术分析、发布和交流投资观点，并与其他交易者互动‌12。</p>
-<h3 id="主要功能和服务"><a href="#主要功能和服务" class="headerlink" title="主要功能和服务"></a>主要功能和服务</h3><ol>
-<li>‌<strong>实时行情追踪</strong>‌：用户可以实时查看各种金融市场的价格变动，包括股票、货币对、期货等。</li>
-<li>‌<strong>技术分析工具</strong>‌：提供多种图表类型（如蜡烛图、线图）和技术指标（如移动平均线、RSI、MACD等），帮助用户进行深入的市场分析。</li>
-<li>‌<strong>社区互动</strong>‌：TradingView是一个活跃的金融社区，用户可以发布和分享自己的投资观点、策略和交易经验，与其他交易者交流和学习‌12。</li>
-</ol>
-<h3 id="使用方法和设置"><a href="#使用方法和设置" class="headerlink" title="使用方法和设置"></a>使用方法和设置</h3><ol>
-<li>‌<strong>注册和登录</strong>‌：用户需要注册并登录TradingView账户，可以通过网站或移动应用进行操作。</li>
-<li>‌<strong>设置中文界面</strong>‌：在个人资料页面选择“语言”选项卡，选择“中文”作为首选语言，保存更改即可将界面语言更改为中文‌12。</li>
-<li>‌<strong>添加和分析工具</strong>‌：在图表工具栏中选择需要的分析工具，如移动平均线、RSI等，并进行相应设置‌2。</li>
-</ol>
-<h3 id="用户评价和社区反馈"><a href="#用户评价和社区反馈" class="headerlink" title="用户评价和社区反馈"></a>用户评价和社区反馈</h3><p>TradingView因其强大的功能和用户友好的界面受到广泛好评。用户可以自由地进行市场分析、策略回测，并且平台的PineScript功能特别受到量化交易者的青睐。许多用户认为TradingView是进行投资分析和交易的理想工具‌4。</p>
-<p>总之，TradingView是一个功能强大的金融交易平台，适合各种水平的投资者和交易者使用。</p>
+            <div itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><h4 id="0-引言"><a href="#0-引言" class="headerlink" title="0.引言"></a>0.引言</h4><p><img src="https://alist.zennon.top/d/image/nginx.png?sign=9ESUICi8DTmjnwUwizhmUXWc7IrSuOEW3H5RT3xQiC8=:0" alt="nginx"></p>
+<h6 id="什么是Nginx？"><a href="#什么是Nginx？" class="headerlink" title="什么是Nginx？"></a>什么是Nginx？</h6><p>Nginx是一个高性能<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=HTTP&spm=1001.2101.3001.7020">HTTP</a>和反向代理服务器，特点是它占用的内存特别少，并发能力强，专门为性能优化而开发，能够经受高负载的考验，能支持高达五万个并发连接数。</p>
+<h6 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h6><p><strong>正向代理</strong>：如果把局域网外的Internet想象成为一个巨大的资源库，则局域网中的客户端（浏览器）要访问internet时，则需要通过代理服务器来访问，这种代理服务就称为正向代理。就比如我们访问百度不是直接访问的而是需要代理服务器进行访问，最终把内容进行返回。</p>
+<p><strong>反向代理</strong>：客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送给反向代理服务器，由反向代理服务器（nginx80）去选择目标服务器（tomcat8080）获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址（80），隐藏真实服务器IP地址</p>
+<h6 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h6><p>单个服务器的并发能力是有限的，增加服务器的数量，将请求分发到各个服务器上就是负载均衡。</p>
+<h6 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h6><p>为了加快服务器的解析速度，通过nginx将动态资源（servlet，jsp）与静态资源（都部署在tomcat里面）由不同的服务器来解析，加快解析速度，来降低单个服务器的压力。</p>
+<h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><ul>
+<li><p>支持高并发，单机能够支持十万个并发连接（取决于内存大小），因为nginx在linux环境下使用了epoll io多路复用模型。</p>
+</li>
+<li><p>内存消耗低，在同类型web服务中，nginx比apache占用的内存资源更少。</p>
+</li>
+<li><p>高扩展性，低耦合的模块设计，并且有丰富的第三方模块支持。</p>
+</li>
+<li><p>高可靠性，nginx的架构是由master进程和worker进程组成的，如果worker出现问题，master会快速开启一个新的worker进程提供服务。</p>
+</li>
+</ul>
+<h4 id="1-Nginx安装"><a href="#1-Nginx安装" class="headerlink" title="1.Nginx安装"></a>1.Nginx安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install nginx</span><br></pre></td></tr></table></figure>
+
+<p>查看nginx的运行装态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure>
+
+
+<p>自动开启nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure>
+
+<p>查看配置信息是否正确</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+
+<p>关闭nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br><span class="line"></span><br><span class="line">nginx -s quit（推荐使用）</span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -term <span class="built_in">id</span>号（master <span class="built_in">id</span>号，快速停机方式）</span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -9 <span class="built_in">id</span>号（强制结束）</span><br></pre></td></tr></table></figure>
+
+<p>开启nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start nginx </span><br></pre></td></tr></table></figure>
+
+<p>重启nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx </span><br></pre></td></tr></table></figure>
+
+<p>重载nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl reload nginx </span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>监控nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Nginx配置"><a href="#2-Nginx配置" class="headerlink" title="2.Nginx配置"></a>2.Nginx配置</h4><p>&#x2F;etc&#x2F;nginx&#x2F;nginx.conf</p>
+<h6 id="第一部分——全局块"><a href="#第一部分——全局块" class="headerlink" title="第一部分——全局块"></a>第一部分——全局块</h6><p>从配置文件开始到events块之间的内容，主要会设置一些影响nginx服务器整体运行的配置指令。</p>
+<p><img src="https://i-blog.csdnimg.cn/direct/03779549ebfc4cabb3b2a45e28f109c8.png" alt="img"></p>
+<p>比如worker_procees auto； 它的值越大，表示处理并发量越多。</p>
+<h6 id="第二部分——events块"><a href="#第二部分——events块" class="headerlink" title="第二部分——events块"></a>第二部分——events块</h6><p>主要影响nginx服务器与用户的网络连接</p>
+<p>比如 worker connections 1024； 支持最大连接数</p>
+<h6 id="第三部分——http块"><a href="#第三部分——http块" class="headerlink" title="第三部分——http块"></a>第三部分——http块</h6><p>反向代理，负载均衡，高可用都是这部分实现的。</p>
+<p>这算是nginx服务器配置中最频繁的部分，代理，缓存和日志定义等绝大多数功能和第三方模块配置都在这里，http块也包括http全局块，server块。</p>
+<p>server块通常通过sites-enabled引入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> /etc/nginx/sites-available/xxx.conf /etc/nginx/sites-enabled</span><br><span class="line"></span><br><span class="line">nginx -t</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>反向代理</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="attr">listen</span> <span class="string">80;</span></span><br><span class="line">        <span class="attr">listen</span> <span class="string">443 ssl;</span></span><br><span class="line">        <span class="attr">server_name</span> <span class="string">alist.zennon.top;</span></span><br><span class="line">        <span class="attr">ssl_certificate</span> <span class="string">cert/alist.zennon.top.pem;</span></span><br><span class="line">        <span class="attr">ssl_certificate_key</span> <span class="string">cert/alist.zennon.top.key;</span></span><br><span class="line">        <span class="attr">ssl_session_cache</span> <span class="string">shared:SSL:1m;</span></span><br><span class="line">        <span class="attr">ssl_session_timeout</span> <span class="string">5m;</span></span><br><span class="line">        <span class="attr">location</span> <span class="string">/ &#123;</span></span><br><span class="line">            <span class="attr">proxy_pass</span> <span class="string">http://localhost:5244;</span></span><br><span class="line">            <span class="attr">proxy_read_timeout</span> <span class="string">600s;</span></span><br><span class="line">        <span class="attr">&#125;</span></span><br><span class="line">    <span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>静态页面</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="attr">listen</span> <span class="string">80;</span></span><br><span class="line">    <span class="attr">server_name</span> <span class="string">bank.zennon.top;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">location</span> <span class="string">/ &#123;</span></span><br><span class="line">        <span class="attr">root</span> <span class="string">/home/ubuntu/web3bank/build;</span></span><br><span class="line">        <span class="attr">try_files</span> <span class="string">$uri $uri/ /index.html;</span></span><br><span class="line">    <span class="attr">&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">location</span> <span class="string">/static/ &#123;</span></span><br><span class="line">        <span class="attr">root</span> <span class="string">home/ubuntu/web3bank/build;</span></span><br><span class="line">    <span class="attr">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    # 其他配置...</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
+
 </div>
         </div>
         
@@ -283,7 +342,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-12-06T07:05:40.617Z" itemprop="dateModified">最后编辑：2024-12-06</time>
+                    <time datetime="2025-01-07T10:39:41.655Z" itemprop="dateModified">最后编辑：2025-01-07</time>
                 </div>
             </div>
         </footer>
@@ -292,19 +351,15 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" 【每日随笔】大雪" href="/2024/12/06/【每日随笔】大雪/"><i class="fa fa-angle-left"></i> 上一篇</a>
+                <a title=" 【Web3】web3.js教程" href="/2025/01/03/【Web3】web3-js教程/"><i class="fa fa-angle-left"></i> 上一篇</a>
             </div>
             
-            
-            <div class="nav-next clearfix">
-                <a title=" 【项目管理】项目管理概论" href="/2024/12/17/【项目管理】项目管理概论/">下一篇 <i class="fa fa-angle-right"></i></a>
-            </div>
             
         </nav>
     
     
         <div class="comment-post">
-            <div id="w-comments" class="kr-comments" data-path="/2024/12/06/%E3%80%90Web3%E3%80%91Trading-View/"></div>
+            <div id="w-comments" class="kr-comments" data-path="/2025/01/07/%E3%80%90Nginx%E3%80%91Nginx%E5%9F%BA%E7%A1%80/"></div>
         </div>
     
 </article>
@@ -368,7 +423,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9C%8D%E5%8A%A1"><span class="toc-text">主要功能和服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E8%AE%BE%E7%BD%AE"><span class="toc-text">使用方法和设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%AF%84%E4%BB%B7%E5%92%8C%E7%A4%BE%E5%8C%BA%E5%8F%8D%E9%A6%88"><span class="toc-text">用户评价和社区反馈</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#0-%E5%BC%95%E8%A8%80"><span class="toc-text">0.引言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNginx%EF%BC%9F"><span class="toc-text">什么是Nginx？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">正向代理与反向代理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">负载均衡</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB"><span class="toc-text">动静分离</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Nginx%E5%AE%89%E8%A3%85"><span class="toc-text">1.Nginx安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Nginx%E9%85%8D%E7%BD%AE"><span class="toc-text">2.Nginx配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E2%80%94%E2%80%94%E5%85%A8%E5%B1%80%E5%9D%97"><span class="toc-text">第一部分——全局块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%E2%80%94%E2%80%94events%E5%9D%97"><span class="toc-text">第二部分——events块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%E2%80%94%E2%80%94http%E5%9D%97"><span class="toc-text">第三部分——http块</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
                 
